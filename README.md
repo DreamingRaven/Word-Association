@@ -10,7 +10,10 @@ For Everyone:
 For Team:
 	
 	I’m aware that for some members, that they may not 
-	be familiar with gits or GitHub. Please also remember
+	be familiar with gits or GitHub, Im here if you
+	need help with anything. 
+	
+	Please also remember
 	to commit little but often.
 	
 	To Do List:
