@@ -1,10 +1,12 @@
 # Word-Association
 
 For Everyone:
+	
 	this project is part of a university module,
 	capable of passing a turing like test.
 
 For Team:
+	
 	Im aware that for some members, that they may
 	not be familiar with gits or github. The
 	following section will outline some usefull,
