@@ -2,17 +2,16 @@
 
 For Everyone:
 	
-	this project is part of a university module,
-	creating an AI capable of passing a turing 
-	like test. Our AI will be a word association
-	cappable, and will take on human stereotypichal
-	personas.
+	This project is part of a university module, 
+	creating an AI capable of passing a Turing like 
+	test. Our AI will be a word association capable, 
+	and will take on human stereotypical personas.
 
 For Team:
 	
-	Im aware that for some members, that they may
-	not be familiar with gits or github. Please 
-	also remember to commit little but oftern.
+	I’m aware that for some members, that they may not 
+	be familiar with gits or GitHub. Please also remember
+	to commit little but often.
 	
 	To Do List:
 		
