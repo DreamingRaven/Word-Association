@@ -3,7 +3,8 @@
 For Everyone:
 	
 	this project is part of a university module,
-	capable of passing a turing like test.
+	creating an AI capable of passing a turing 
+	like test.
 
 For Team:
 	
