@@ -4,7 +4,7 @@ For Everyone:
 	
 	This project is part of a university module, 
 	creating an AI capable of passing a Turing like 
-	test. Our AI will be a word association capable, 
+	test. Our AI will be word association capable, 
 	and will take on human stereotypical personas.
 
 For Team:
