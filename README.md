@@ -23,12 +23,10 @@ For Team:
 	
 	To Do List:
 		
-		- get everyone sorted with GitHub
 		- implement ADT of "concept"
-		- create file reader for database
-		- create file writer in house style
-		- create UI for association game
-		- implement persona ADT
+		- implement ADT of "file"
+		- implement ADT of "persona"
+		- implement design of UI
 		
 Relevant Resources:
 
