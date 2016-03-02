@@ -6,6 +6,11 @@ For Everyone:
 	creating an AI capable of passing a Turing like 
 	test. Our AI will be word association capable, 
 	and will take on human stereotypical personas.
+	
+	proposal: 
+	https://goo.gl/re8QYn or
+	https://docs.google.com/document/d/16Xe5svMuB
+	eATXTfRUve45QbVQAq_E5weheaEZnmAQ9g/edit?usp=sharing
 
 For Team:
 	
