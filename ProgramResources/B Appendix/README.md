@@ -1,11 +1,8 @@
-# Word-Association : AI Resources
+# Word-Association : B Appendix
 
 For everyone:
 
-	These folders contain all our initial data for our AI.
-	They are all structured differentley, but each one
-	is documented in how it is structured. This can be
-	found either, in the wiki or in the individual readmes'.
+	
 	
 	Appendix:
 	
