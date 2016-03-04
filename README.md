@@ -15,7 +15,7 @@ For Everyone:
 For Team:
 	
 	I’m aware that for some members, that they may not 
-	be familiar with gits or GitHub, Im here if you
+	be familiar with git or GitHub, Im here if you
 	need help with anything. 
 	
 	Please also remember
