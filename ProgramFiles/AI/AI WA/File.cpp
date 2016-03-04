@@ -20,10 +20,17 @@ File::~File()
 int File::fileRead()
 {
 	// if file exists
-		// read file / folder excluding README and MIAS, "m_fN"
+	if (m_fN != "")
+	{
+		// read file / folder excluding README and MIAS, "m_fN" and confirm result
 		return 0;
-	// else
-		// return -1
+	}
+	else
+	{
+		// return failed result
+		return -1;
+	}
+		
 }
 
 int File::fileWrite()
