@@ -28,6 +28,9 @@ For Team:
 		- implement ADT of "persona"
 		- implement design of UI
 		
+
+	https://github.com/ben-strasser/fast-cpp-csv-parser (CSV Reader for use in reading the word banks into the program)
+
 Relevant Resources:
 
 	Nelson, D. L., McEvoy, C. L., and Schreiber, T. A. (1998) 
