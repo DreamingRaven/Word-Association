@@ -1,4 +1,13 @@
+#include <iostream>
 #include "File.h"
+#include <vector>
+// vector.push_back(value)							--> adds element to the END of the vector and resizes
+// vector.at(index)									--> returns element at index (starting from typichal index of 0)
+// vector.size()									--> returns UNSIGNED INT equal to the number of elements in vector
+// vector.begin()									--> reads vector from element 0
+// vector.insert(vector.begin() + int, new value)	--> adds element BEFORE index
+// vector.clear()									--> removes all elements in vector
+// vector.empty()									--> returns bool if empty (true = empty)
 
 
 
@@ -7,7 +16,8 @@ File::File(char* t_fN)
 	if (true)// call file name user input sanitiser, (t_fN)
 	{
 		// copy pointer,
-		//m_fN = t_fN;
+		m_fN = t_fN;
+		std::cout << "\"" << *m_fN << "\" has been successfully passed to \"File\" constructor" << std::endl;
 		// call file reader/ new file creator, (m_fN)
 		fileRead();
 	}
