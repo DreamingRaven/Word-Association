@@ -1,6 +1,4 @@
 ﻿  File.cpp
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  main.cpp
+c:\users\geoge_000\documents\github\word-association\programfiles\ai\ai wa\file.cpp(42): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
   AI WA.vcxproj -> C:\Users\geoge_000\Documents\GitHub\Word-Association\ProgramFiles\AI\Debug\AI WA.exe
   AI WA.vcxproj -> C:\Users\geoge_000\Documents\GitHub\Word-Association\ProgramFiles\AI\Debug\AI WA.pdb (Partial PDB)

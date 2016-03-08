@@ -8,7 +8,7 @@
 // vector.insert(vector.begin() + int, new value)	--> adds element BEFORE index
 // vector.clear()									--> removes all elements in vector
 // vector.empty()									--> returns bool if empty (true = empty)
-
+#include <fstream> 
 
 
 File::File(char* t_fN)
@@ -33,6 +33,28 @@ int File::fileRead()
 	if (m_fN != "")
 	{
 		// read file / folder excluding README and MIAS, "m_fN" and confirm result
+
+		// test code currentley!!
+		std::ifstream file(m_fN, std::ios::in | std::ios::binary | std::ios::ate);
+		if (file.is_open())
+		{
+			file.seekg(0, std::ios::end);
+			int size = file.tellg();
+			char *contents = new char[size];
+			file.seekg(0, std::ios::beg);
+			file.read(contents, size);
+			file.close();
+			// complete need then delete
+
+			// display to check data:
+			for (int x = 0; x < size; x++)
+			{
+				std::cout << contents[x] << std::endl;
+			}
+			
+			delete[] contents;
+		}
+
 		return 0;
 	}
 	else

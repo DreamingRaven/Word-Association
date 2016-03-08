@@ -5,8 +5,9 @@ class File
 private:
 	// file/ directory name
 	char* m_fN;
-	// fileData, (fileVector (documentVector (char*))) pointer 
-	std::vector< std::vector<char*> >* m_fD;
+	// changed vector to be one dimensional File is now
+	// more true to ADT and a single file at a time.
+	std::vector<char*>* m_fD;
 
 protected:
 	// protecting file reader to keep sanitisation
