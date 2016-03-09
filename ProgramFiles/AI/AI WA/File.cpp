@@ -76,10 +76,12 @@ int File::fileWrite()
 
 int File::getConcept(char* a1, int* a2, int* a3) {
 	try {
+		std::cout << "getConcept is A ok" << std::endl;
 		return 0;
 	}
 	catch (char* e)
 	{
+		std::cout << "getConcept errored" << std::endl;
 		return -1;
 	}
 	std::cout << "How did you even manage to get here T_T ???" << std::endl;
@@ -88,10 +90,12 @@ int File::getConcept(char* a1, int* a2, int* a3) {
 
 int File::setConcept(char* a1, int* a2, int* a3) {
 	try {
+		std::cout << "setConcept is A ok" << std::endl;
 		return 0;
 	}
 	catch (char* e)
 	{
+		std::cout << "setConcept errored" << std::endl;
 		return -1;
 	}
 	std::cout << "How did you even manage to get here Q_Q ???" << std::endl;
