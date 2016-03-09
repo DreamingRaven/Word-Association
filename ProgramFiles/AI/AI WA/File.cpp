@@ -73,3 +73,27 @@ int File::fileWrite()
 		// create new file
 	return 0;
 }
+
+int File::getConcept(char* a1, int* a2, int* a3) {
+	try {
+		return 0;
+	}
+	catch (char* e)
+	{
+		return -1;
+	}
+	std::cout << "How did you even manage to get here T_T ???" << std::endl;
+	return -2;
+}
+
+int File::setConcept(char* a1, int* a2, int* a3) {
+	try {
+		return 0;
+	}
+	catch (char* e)
+	{
+		return -1;
+	}
+	std::cout << "How did you even manage to get here Q_Q ???" << std::endl;
+	return -2;
+}

@@ -22,8 +22,8 @@ public:
 	File();
 	~File(); 
 	int initFile();
-	int getConcept();
-	int setConcept();
+	int getConcept(char* a1, int* a2, int* a3);
+	int setConcept(char* a1, int* a2, int* a3);
 
 
 };
