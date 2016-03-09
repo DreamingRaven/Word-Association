@@ -31,6 +31,9 @@ For Team:
 
 	https://github.com/ben-strasser/fast-cpp-csv-parser 
 	(CSV Reader for use in reading the word banks into the program)
+	
+	https://www.researchgate.net/publication/16959438_Effects_of_age_and_skill_in_typing
+	(Paper on typing speed based on age and skill)
 
 Relevant Resources:
 
