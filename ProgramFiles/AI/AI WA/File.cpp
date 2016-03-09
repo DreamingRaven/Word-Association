@@ -17,7 +17,7 @@ File::File(char* t_fN)
 	{
 		// copy pointer,
 		m_fN = t_fN;
-		std::cout << "\"" << *m_fN << "\" has been successfully passed to \"File\" constructor" << std::endl;
+		std::cout << "\"" << m_fN << "\" has been successfully passed to \"File\" constructor" << std::endl;
 		// call file reader/ new file creator, (m_fN)
 		fileRead();
 	}
@@ -40,7 +40,7 @@ int File::fileRead()
 		{
 			file.seekg(0, std::ios::end);
 			int size = file.tellg();
-			char *contents = new char[size];
+			char* contents = new char[size];
 			file.seekg(0, std::ios::beg);
 			file.read(contents, size);
 			file.close();

@@ -18,6 +18,13 @@ public:
 	// constructor for file or directory 
 	// priority = file
 	File(char* t_fN);
+	File(int* regenG, int* conf);
+	File();
 	~File(); 
+	int initFile();
+	int getConcept();
+	int setConcept();
+
+
 };
 
