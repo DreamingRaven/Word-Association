@@ -17,9 +17,8 @@ protected:
 public:
 	// constructor for file or directory 
 	// priority = file
-	File(char* t_fN);
-	File(int* regenG, int* conf);
 	File();
+	File(char* c);
 	~File(); 
 	int initFile();
 	int getConcept(char* a1, int* a2, int* a3);

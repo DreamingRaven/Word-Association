@@ -11,16 +11,14 @@
 #include <fstream> 
 
 
-File::File(char* t_fN)
+File::File()
 {
-	if (true)// call file name user input sanitiser, (t_fN)
-	{
-		// copy pointer,
-		m_fN = t_fN;
-		std::cout << "\"" << m_fN << "\" has been successfully passed to \"File\" constructor" << std::endl;
-		// call file reader/ new file creator, (m_fN)
-		fileRead();
-	}
+	std::cout << "File::File(), Succesfully called, initiating. Now." << std::endl;
+}
+
+File::File(char* c)
+{
+	std::cout << "File::File(char* c), Sucessfully called, initiating. Now." << std::endl;
 }
 
 File::~File()

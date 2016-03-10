@@ -113,10 +113,12 @@
     <ClCompile Include="Concept.cpp" />
     <ClCompile Include="File.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Persona.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Concept.h" />
     <ClInclude Include="File.h" />
+    <ClInclude Include="Persona.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
