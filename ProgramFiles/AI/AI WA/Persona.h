@@ -1,8 +1,10 @@
 #pragma once
 class Persona
 {
+	char* bestWrd;
 public:
-	Persona();
+	Persona(char* wrd);
 	~Persona();
+	char* getBestWord() { return bestWrd; };
 };
 
