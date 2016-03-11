@@ -4,8 +4,8 @@ For everyone:
 
 	G Appendix is our in house file type.
 	It is structured as follows:
-	*	Cue Target1 Target2 Target3 TargetN
-	*	#G	T1#P	T2#P	T3#P	TN#P		
+	*	Cue, Target1, Target2, Target3, TargetN
+	*	#G,	 T1#P,	  T2#P,	   T3#P,	TN#P		
 	Repeated for every CUE word. This means that,
 	we can derive the FSG when we need it and reduce,
 	file size.
