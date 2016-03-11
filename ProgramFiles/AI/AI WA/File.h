@@ -4,7 +4,7 @@ class File
 {
 private:
 	// file/ directory name
-	char* m_fN;
+	char* m_fN = "";
 	// changed vector to be one dimensional File is now
 	// more true to ADT and a single file at a time.
 	std::vector<char*>* m_fD;
@@ -12,7 +12,9 @@ private:
 protected:
 	// protecting file reader to keep sanitisation
 	int fileRead();
+	int fileRead(const char* c);
 	int fileWrite();
+	int sanitInp(); // worry about this later
 
 public:
 	// constructor for file or directory 

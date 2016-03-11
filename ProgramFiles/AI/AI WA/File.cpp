@@ -16,9 +16,19 @@ File::File()
 	std::cout << "File::File(), Succesfully called, initiating. Now." << std::endl;
 }
 
-File::File(char* c)
+File::File(char* t_c)
 {
-	std::cout << "File::File(char* c), Sucessfully called, initiating. Now." << std::endl;
+	std::cout << "File::File(char* c),    \/\/   Sucessfully called, initiating. Now." << std::endl;
+	std::cout << "c[0] = " << *t_c << "    \/\/   be aware could be implicitly converted not yet sanitized." << std::endl;
+	//std::cout << "" << std::endl;
+	if ( !(fileRead()) ) // as true is only not false not neccesarily 1
+	{
+		std::cout << "int File::fileRead(), reached good end" << std::endl;
+	}
+	else
+	{
+		std::cout << "int File::fileRead(), did not reach good end" << std::endl;
+	}
 }
 
 File::~File()
@@ -27,6 +37,8 @@ File::~File()
 
 int File::fileRead()
 {
+
+	std::cout << "int File::fileRead(" << *m_fN << ")" << std::endl;
 	// if file exists
 	if (m_fN != "")
 	{
@@ -34,6 +46,7 @@ int File::fileRead()
 
 		// test code currentley!!
 		std::ifstream file(m_fN, std::ios::in | std::ios::binary | std::ios::ate);
+
 		if (file.is_open())
 		{
 			file.seekg(0, std::ios::end);
@@ -51,8 +64,8 @@ int File::fileRead()
 			}
 			
 			delete[] contents;
+			return 1;
 		}
-
 		return 0;
 	}
 	else
@@ -61,6 +74,12 @@ int File::fileRead()
 		return -1;
 	}
 		
+}
+
+int File::fileRead(const char* t_c)
+{
+
+	return 0;
 }
 
 int File::fileWrite()
@@ -72,7 +91,7 @@ int File::fileWrite()
 	return 0;
 }
 
-int File::getConcept(char* a1, int* a2, int* a3) {
+int File::getConcept(char* t_a1, int* t_a2, int* t_a3) {
 	try {
 		std::cout << "getConcept is A ok" << std::endl;
 		return 0;
