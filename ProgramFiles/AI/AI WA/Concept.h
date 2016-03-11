@@ -8,7 +8,7 @@ private:
 	void getWordData(char* word, int* fsg);
 	int* generateFSG();
 public:
-	Concept();
+	Concept(char* a1);
 	~Concept();
 };
 
