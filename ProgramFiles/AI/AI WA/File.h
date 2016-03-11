@@ -23,7 +23,7 @@ public:
 	File(char* c);
 	~File(); 
 	int initFile();
-	int getConcept(char* a1, int* a2, int* a3);
+	int getConcept(std::vector<std::vector<char*> >& t_vec);
 	int setConcept(char* a1, int* a2, int* a3);
 
 
