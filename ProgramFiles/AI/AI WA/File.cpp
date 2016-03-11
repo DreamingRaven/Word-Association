@@ -19,7 +19,7 @@ File::File()
 File::File(char* t_c)
 {
 	std::cout << "File::File(char* c),    \/\/   Sucessfully called, initiating. Now." << std::endl;
-	std::cout << "c[0] = " << *t_c << "    \/\/   be aware could be implicitly converted not yet sanitized." << std::endl;
+	std::cout << "c[0] = " << t_c << "    \/\/   be aware could be implicitly converted not yet sanitized." << std::endl;
 	//std::cout << "" << std::endl;
 	if ( !(fileRead()) ) // as true is only not false not neccesarily 1
 	{
@@ -37,9 +37,12 @@ File::~File()
 
 int File::fileRead()
 {
-
-	std::cout << "int File::fileRead(" << *m_fN << ")" << std::endl;
-	// if file exists
+	std::cout << "size of m_fN = " << sizeof(*m_fN) << std::endl;
+	for (int x = 0; x < sizeof(*m_fN); x++)
+	{
+		std::cout << "int File::fileRead(" << m_fN << ")" << std::endl;
+	}
+	 //if file exists
 	if (m_fN != "")
 	{
 		// read file / folder excluding README and MIAS, "m_fN" and confirm result
@@ -70,7 +73,7 @@ int File::fileRead()
 	}
 	else
 	{
-		// return failed result
+		 //return failed result
 		return -1;
 	}
 		
@@ -91,7 +94,8 @@ int File::fileWrite()
 	return 0;
 }
 
-int File::getConcept(char* t_a1, int* t_a2, int* t_a3) {
+int File::getConcept(std::vector<std::vector<char*> >& t_vec) 
+{
 	try {
 		std::cout << "getConcept is A ok" << std::endl;
 		return 0;
