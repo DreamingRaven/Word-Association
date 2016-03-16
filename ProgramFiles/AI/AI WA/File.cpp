@@ -44,56 +44,51 @@ int File::fileRead(const char* t_c)
 	//if file name is not blank
 	if (t_c != "")
 	{
-		//// read file / folder excluding README and MIAS, "m_fN" and confirm result
-		//std::ifstream file(t_c, std::ios::in | std::ios::binary | std::ios::ate);
-		//if (file.is_open())
+		// old code
+		//int fileSize = (m_w * m_h);
+		//m_data = new double[fileSize];
+		//std::ifstream myFile(m_fileName);
+		//if (myFile.is_open())
 		//{
-		//	file.seekg(0, std::ios::end);
-		//	int size = file.tellg();
-		//	char* contents = new char[size];
-		//	file.seekg(0, std::ios::beg);
-		//	file.read(contents, size);
-		//	file.close();
-		//	// complete need then delete
-		//	// display to check data:
-		//	for (int x = 0; x < size; x++)
+		//	// Improved (cleaner) file read loop on what was given 
+		//	for (int incrementor = 0; myFile.good() && incrementor<(fileSize - 1); incrementor++)
 		//	{
-		//		std::cout << contents[x] << std::endl;
+		//		myFile >> m_data[incrementor]; // alternative; <<*(m_data + incrementor)>>
 		//	}
-		//	
-		//	delete[] contents;
-		//	return 0;
 		//}
-		//std::cout << "There appears to be a problem with the file or file name." << std::endl;
-		//return -1;
-
+		//else
+		//{
+		//	std::cout << "Unable to open file" << std::endl;
+		//}
 		std::ifstream file;
 		file.open(t_c);
-
-		if (file.fail()) // boundary condition
+		if (file.fail()) // pre check to immediateley exit
 		{
 			std::cout << "\ncould not open file" << std::endl;
 			file.close();
-			return -1;
+			return 0;
 		}
-		
-		//std::string a, b;
-		//char c;
-		//while (file >> a >> c >> b && c == ',')
-		//{
-		//	std::cout << a << " and " << b << std::endl;
-		//}
+		else
+		{
+			std::string line;
+			std::cout << "\nfile opened successfully\ncontents:\n" << std::endl;
 
-		std::cout << "\nfile opened successfully" << std::endl;
-		file.close();
-		return 0;
+			for (int i = 0; std::getline(file, line) && !(file.fail()); i++)
+			{
+				m_fD.push_back(lineToVector(line));
+				std::cout << " row: " << i << " data: " << line << std::endl;
+			}
+			file.close();
+			return 0;
+		}		
 	}
 	else
 	{
 		//return failed result
-		return -2;
+		return 0;
 	}
-	return -3;
+	// just in case return
+	return -1;
 }
 
 int File::fileWrite()
@@ -102,14 +97,59 @@ int File::fileWrite()
 		// overwrite
 	// else
 		// create new file
+
+	// old code!
+	//int dataSize = (m_w * m_h);
+	//unsigned char* fileData = (unsigned char*) new unsigned char[dataSize];
+
+	//std::ofstream myFile;
+	//myFile.open(m_fileName, std::ios::out | std::ios::binary | std::ios::trunc);
+
+	//// cleaned up function to gate properly (first + no unecessary "exit(1)") and not assign heap memory if file(open)/ stream is unsuccessfull 
+	//if (myFile.is_open() && myFile.good())
+	//{
+	//	for (int i = 0; i < dataSize; i++)
+	//	{
+	//		// casting to unsigned char so can be output in file 
+	//		fileData[i] = (unsigned char)m_data[i];
+	//	}
+
+	//	myFile << "P5" << std::endl;
+	//	myFile << m_w << " " << m_h << std::endl;
+	//	myFile << oV << std::endl;
+	//	myFile.write(reinterpret_cast<char *>(fileData), (dataSize)*sizeof(unsigned char));
+	//}
+	//else
+	//{
+	//	std::cout << "Unable to use file" << std::endl;
+	//}
+
+	//myFile.close();
+	//delete[] fileData;
+	//return 0;
 	return 0;
 }
 
+std::vector<char*> File::lineToVector(std::string t_line)
+{
+	std::vector<char*> tempVector;
+	//for (int start = 0, int end = 0; end < t_line.size(); end++)
+	//{
+	//	if (t_line[end] == ',')
+	//	{
+
+	//	}
+	//	//tempVector.push_back();
+	//}
+	return tempVector;
+}
+
+//returns 0 if success, wipes vector
 int File::getConcept(std::vector<std::vector<char*> >& t_vec) 
 {
 	return 0; // no need for error checking as will renew vectors
 }
-
+//returns 0 if success, vector is unchanged
 int File::setConcept(std::vector<std::vector<char*> >& t_vec) {
 	try {
 		std::cout << "setConcept is A ok" << std::endl;

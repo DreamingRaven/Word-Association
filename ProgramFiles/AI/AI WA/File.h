@@ -1,19 +1,23 @@
 #pragma once
 #include <vector>
+#include <string>
+
 class File
 {
 private:
 	// file/ directory name
 	char* m_fN = "";
-	// changed vector to be one dimensional File is now
-	// more true to ADT and a single file at a time.
-	std::vector<char*>* m_fD;
+	// tried making it one dimensional but
+	// more easily communicated (ironicaly)
+	// as two dimensional vector with strings
+	std::vector< std::vector<char*> > m_fD;
 
 protected:
 	// protecting file reader to keep sanitisation
 	int fileRead();
 	int fileRead(const char* c);
 	int fileWrite();
+	std::vector<char*> lineToVector(std::string t_line);
 	int sanitInp(); // worry about this later
 
 public:
