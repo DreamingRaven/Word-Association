@@ -9,6 +9,7 @@
 // vector.clear()									--> removes all elements in vector
 // vector.empty()									--> returns bool if empty (true = empty)
 #include <fstream> 
+#include <string>
 
 
 File::File()
@@ -75,11 +76,14 @@ int File::fileRead(const char* t_c)
 			file.close();
 			return -1;
 		}
-
-		//for (int x = 0; !file.eof(); x++)
+		
+		//std::string a, b;
+		//char c;
+		//while (file >> a >> c >> b && c == ',')
 		//{
-		//	std::cout << x << std::endl;
+		//	std::cout << a << " and " << b << std::endl;
 		//}
+
 		std::cout << "\nfile opened successfully" << std::endl;
 		file.close();
 		return 0;
