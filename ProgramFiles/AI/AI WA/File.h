@@ -23,8 +23,9 @@ public:
 	File(char* c);
 	~File(); 
 	int initFile();
+	// the following are the main functions
 	int getConcept(std::vector<std::vector<char*> >& t_vec);
-	int setConcept(char* a1, int* a2, int* a3);
+	int setConcept(std::vector<std::vector<char*> >& t_vec);
 
 
 };

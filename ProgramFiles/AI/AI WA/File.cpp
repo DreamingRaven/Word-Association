@@ -14,6 +14,8 @@
 File::File()
 {
 	std::cout << "File::File(), Succesfully called, initiating. Now." << std::endl;
+	m_fN = "testInput.txt";
+	fileRead();
 }
 
 File::File(char* t_c)
@@ -26,6 +28,7 @@ File::File(char* t_c)
 
 File::~File()
 {
+
 }
 
 int File::fileRead()
@@ -40,29 +43,46 @@ int File::fileRead(const char* t_c)
 	//if file name is not blank
 	if (t_c != "")
 	{
-		// read file / folder excluding README and MIAS, "m_fN" and confirm result
-		std::ifstream file(t_c, std::ios::in | std::ios::binary | std::ios::ate);
-		if (file.is_open())
-		{
-			file.seekg(0, std::ios::end);
-			int size = file.tellg();
-			char* contents = new char[size];
-			file.seekg(0, std::ios::beg);
-			file.read(contents, size);
-			file.close();
-			// complete need then delete
+		//// read file / folder excluding README and MIAS, "m_fN" and confirm result
+		//std::ifstream file(t_c, std::ios::in | std::ios::binary | std::ios::ate);
+		//if (file.is_open())
+		//{
+		//	file.seekg(0, std::ios::end);
+		//	int size = file.tellg();
+		//	char* contents = new char[size];
+		//	file.seekg(0, std::ios::beg);
+		//	file.read(contents, size);
+		//	file.close();
+		//	// complete need then delete
+		//	// display to check data:
+		//	for (int x = 0; x < size; x++)
+		//	{
+		//		std::cout << contents[x] << std::endl;
+		//	}
+		//	
+		//	delete[] contents;
+		//	return 0;
+		//}
+		//std::cout << "There appears to be a problem with the file or file name." << std::endl;
+		//return -1;
 
-			// display to check data:
-			for (int x = 0; x < size; x++)
-			{
-				std::cout << contents[x] << std::endl;
-			}
-			
-			delete[] contents;
-			return 0;
+		std::ifstream file;
+		file.open(t_c);
+
+		if (file.fail()) // boundary condition
+		{
+			std::cout << "\ncould not open file" << std::endl;
+			file.close();
+			return -1;
 		}
-		std::cout << "There appears to be a problem with the file or file name." << std::endl;
-		return -1;
+
+		//for (int x = 0; !file.eof(); x++)
+		//{
+		//	std::cout << x << std::endl;
+		//}
+		std::cout << "\nfile opened successfully" << std::endl;
+		file.close();
+		return 0;
 	}
 	else
 	{
@@ -83,10 +103,10 @@ int File::fileWrite()
 
 int File::getConcept(std::vector<std::vector<char*> >& t_vec) 
 {
-	return 0;
+	return 0; // no need for error checking as will renew vectors
 }
 
-int File::setConcept(char* a1, int* a2, int* a3) {
+int File::setConcept(std::vector<std::vector<char*> >& t_vec) {
 	try {
 		std::cout << "setConcept is A ok" << std::endl;
 		return 0;

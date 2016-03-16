@@ -120,6 +120,9 @@
     <ClInclude Include="File.h" />
     <ClInclude Include="Persona.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="testInput.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
