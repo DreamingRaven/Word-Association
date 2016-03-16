@@ -4,7 +4,7 @@
 
 Persona::Persona(char* wrd)
 {
-	Concept::Concept(wrd)
+	Concept::Concept(wrd);
 }
 
 Persona::~Persona()

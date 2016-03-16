@@ -18,17 +18,10 @@ File::File()
 
 File::File(char* t_c)
 {
-	std::cout << "File::File(char* c),    \/\/   Sucessfully called, initiating. Now." << std::endl;
-	std::cout << "c[0] = " << t_c << "    \/\/   be aware could be implicitly converted not yet sanitized." << std::endl;
-	//std::cout << "" << std::endl;
-	if ( !(fileRead()) ) // as true is only not false not neccesarily 1
-	{
-		std::cout << "int File::fileRead(), reached good end" << std::endl;
-	}
-	else
-	{
-		std::cout << "int File::fileRead(), did not reach good end" << std::endl;
-	}
+	std::cout << "File::File(char* c), - Sucessfully called, initiating. Now." << std::endl;
+	std::cout << "c = " << t_c << " - be aware, could be implicitly converted, not yet sanitized." << std::endl;
+	m_fN = t_c;
+	fileRead();
 }
 
 File::~File()
@@ -37,19 +30,18 @@ File::~File()
 
 int File::fileRead()
 {
-	std::cout << "size of m_fN = " << sizeof(*m_fN) << std::endl;
-	for (int x = 0; x < sizeof(*m_fN); x++)
-	{
-		std::cout << "int File::fileRead(" << m_fN << ")" << std::endl;
-	}
-	 //if file exists
-	if (m_fN != "")
+	fileRead(m_fN);
+	return 0;
+		
+}
+
+int File::fileRead(const char* t_c)
+{
+	//if file name is not blank
+	if (t_c != "")
 	{
 		// read file / folder excluding README and MIAS, "m_fN" and confirm result
-
-		// test code currentley!!
-		std::ifstream file(m_fN, std::ios::in | std::ios::binary | std::ios::ate);
-
+		std::ifstream file(t_c, std::ios::in | std::ios::binary | std::ios::ate);
 		if (file.is_open())
 		{
 			file.seekg(0, std::ios::end);
@@ -67,22 +59,17 @@ int File::fileRead()
 			}
 			
 			delete[] contents;
-			return 1;
+			return 0;
 		}
-		return 0;
+		std::cout << "There appears to be a problem with the file or file name." << std::endl;
+		return -1;
 	}
 	else
 	{
-		 //return failed result
-		return -1;
+		//return failed result
+		return -2;
 	}
-		
-}
-
-int File::fileRead(const char* t_c)
-{
-
-	return 0;
+	return -3;
 }
 
 int File::fileWrite()
@@ -96,17 +83,7 @@ int File::fileWrite()
 
 int File::getConcept(std::vector<std::vector<char*> >& t_vec) 
 {
-	try {
-		std::cout << "getConcept is A ok" << std::endl;
-		return 0;
-	}
-	catch (char* e)
-	{
-		std::cout << "getConcept errored" << std::endl;
-		return -1;
-	}
-	std::cout << "How did you even manage to get here T_T ???" << std::endl;
-	return -2;
+	return 0;
 }
 
 int File::setConcept(char* a1, int* a2, int* a3) {
