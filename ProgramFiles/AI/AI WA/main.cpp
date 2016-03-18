@@ -10,6 +10,6 @@ int main(int argc, char** argv)
 	std::cout << "\npath = " << argv[0] << "\n" << std::endl;
 	File test("testInput.txt");
 	File G("..\\..\\..\\ProgramResources\\G Appendix\\G A-Z.txt"); // example of working relative pathing
-	File A("..\\..\\..\\ProgramResources\\A Appendix\\A-B.txt");
+	//File A("..\\..\\..\\ProgramResources\\A Appendix\\A-B.txt");
 	return 0;
 }

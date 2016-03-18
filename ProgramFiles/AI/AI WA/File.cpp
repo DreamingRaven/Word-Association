@@ -8,7 +8,8 @@
 // vector.insert(vector.begin() + int, new value)	--> adds element BEFORE index
 // vector.clear()									--> removes all elements in vector
 // vector.empty()									--> returns bool if empty (true = empty)
-#include <fstream> 
+#include <fstream>
+#include <sstream>
 #include <string>
 
 // Constructor that is blank and used to generate initial G
@@ -123,15 +124,13 @@ int File::fileWrite()
 std::vector<char*> File::lineToVector(std::string t_line)
 {
 	std::vector<char*> tempVector;
-	//for (int start = 0, int end = 0; end < t_line.size(); end++)
-	//{
-	//	if (t_line[end] == ',')
-	//	{
-
-	//	}
-	//	//tempVector.push_back();
-	//}
-	return tempVector;
+	std::istringstream ISS(t_line);
+	for (std::string token; std::getline(ISS, token, ',');)
+	{
+		std::cout << token << std::endl;
+		//tempVector.push_back(token.begin, token.end);
+	}
+	return tempVector; // vectors default passed by value not ref
 }
 
 //returns 0 if success, wipes vector in the process
