@@ -43,5 +43,32 @@
     <Text Include="testInput.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="..\..\..\ProgramResources\G Appendix\G A-Z.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="..\..\..\ProgramResources\A Appendix\A-B.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="..\..\..\ProgramResources\A Appendix\C.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="..\..\..\ProgramResources\A Appendix\D-F.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="..\..\..\ProgramResources\A Appendix\G-K.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="..\..\..\ProgramResources\A Appendix\L-O.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="..\..\..\ProgramResources\A Appendix\P-R.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="..\..\..\ProgramResources\A Appendix\S.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="..\..\..\ProgramResources\A Appendix\T-Z.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

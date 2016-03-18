@@ -121,6 +121,15 @@
     <ClInclude Include="Persona.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="..\..\..\ProgramResources\A Appendix\A-B.txt" />
+    <Text Include="..\..\..\ProgramResources\A Appendix\C.txt" />
+    <Text Include="..\..\..\ProgramResources\A Appendix\D-F.txt" />
+    <Text Include="..\..\..\ProgramResources\A Appendix\G-K.txt" />
+    <Text Include="..\..\..\ProgramResources\A Appendix\L-O.txt" />
+    <Text Include="..\..\..\ProgramResources\A Appendix\P-R.txt" />
+    <Text Include="..\..\..\ProgramResources\A Appendix\S.txt" />
+    <Text Include="..\..\..\ProgramResources\A Appendix\T-Z.txt" />
+    <Text Include="..\..\..\ProgramResources\G Appendix\G A-Z.txt" />
     <Text Include="testInput.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

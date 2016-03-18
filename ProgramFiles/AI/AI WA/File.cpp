@@ -11,20 +11,26 @@
 #include <fstream> 
 #include <string>
 
-
+// Constructor that is blank and used to generate initial G
 File::File()
 {
-	std::cout << "File::File(), Succesfully called, initiating. Now." << std::endl;
+	std::cout << "\nFile::File(), Succesfully called, initiating. Now." << std::endl;
 	m_fN = "testInput.txt";
 	fileRead();
 }
 
-File::File(char* t_c)
+// Constructor that reads a file from an input char* full file path 
+File::File(char* t_filePath)
 {
-	std::cout << "File::File(char* c), - Sucessfully called, initiating. Now." << std::endl;
-	std::cout << "c = " << t_c << " - be aware, could be implicitly converted, not yet sanitized." << std::endl;
-	m_fN = t_c;
+	std::cout << "\nFile::File(char* c), - Sucessfully called, initiating. Now." << std::endl;
+	std::cout << "c = " << t_filePath << " - Non-sanitized." << std::endl;
+	m_fN = t_filePath;
 	fileRead();
+}
+
+File::File(char* t_file, char t_appendix)
+{
+
 }
 
 File::~File()
@@ -44,22 +50,6 @@ int File::fileRead(const char* t_c)
 	//if file name is not blank
 	if (t_c != "")
 	{
-		// old code
-		//int fileSize = (m_w * m_h);
-		//m_data = new double[fileSize];
-		//std::ifstream myFile(m_fileName);
-		//if (myFile.is_open())
-		//{
-		//	// Improved (cleaner) file read loop on what was given 
-		//	for (int incrementor = 0; myFile.good() && incrementor<(fileSize - 1); incrementor++)
-		//	{
-		//		myFile >> m_data[incrementor]; // alternative; <<*(m_data + incrementor)>>
-		//	}
-		//}
-		//else
-		//{
-		//	std::cout << "Unable to open file" << std::endl;
-		//}
 		std::ifstream file;
 		file.open(t_c);
 		if (file.fail()) // pre check to immediateley exit
@@ -76,7 +66,7 @@ int File::fileRead(const char* t_c)
 			for (int i = 0; std::getline(file, line) && !(file.fail()); i++)
 			{
 				m_fD.push_back(lineToVector(line));
-				std::cout << " row: " << i << " data: " << line << std::endl;
+				//std::cout << " row: " << i << " data: " << line << std::endl;
 			}
 			file.close();
 			return 0;
@@ -85,7 +75,7 @@ int File::fileRead(const char* t_c)
 	else
 	{
 		//return failed result
-		return 0;
+		return -1;
 	}
 	// just in case return
 	return -1;
@@ -144,10 +134,10 @@ std::vector<char*> File::lineToVector(std::string t_line)
 	return tempVector;
 }
 
-//returns 0 if success, wipes vector
+//returns 0 if success, wipes vector in the process
 int File::getConcept(std::vector<std::vector<char*> >& t_vec) 
 {
-	return 0; // no need for error checking as will renew vectors
+	return 0; // no need for ErrCheck as will do nothing if not found
 }
 //returns 0 if success, vector is unchanged
 int File::setConcept(std::vector<std::vector<char*> >& t_vec) {
