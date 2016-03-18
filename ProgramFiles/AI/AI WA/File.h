@@ -19,8 +19,8 @@ protected:
 	int sanitInp();
 
 public:
-	File();
-	File(char* fullFilePath);
+	File(); // default appendix G
+	File(char* fullFilePath); 
 	File(char* fileName, char appendix);
 	~File(); 
 
