@@ -67,10 +67,19 @@ int File::fileRead(const char* t_c)
 			for (int i = 0; std::getline(file, line) && !(file.fail()); i++)
 			{
 				m_fD.push_back(lineToVector(line));
-				//std::cout << " row: " << i << " data: " << line << std::endl;
+				std::cout << *(m_fD[0][i]) << std::endl;
 			}
+
 			file.close();
-			return 0;
+
+			//for (auto i = m_fD.begin(); i != m_fD.end(); ++i)
+			//{
+			//	//for (auto c = m_fD[i].begin(); c != m_fD[i].end(); ++c)
+			//	//{
+			//	//	//std::cout << *i[c] << ' ' << std::endl;
+			//	//}
+			//}
+			//return 0;
 		}		
 	}
 	else
@@ -128,6 +137,12 @@ std::vector<char*> File::lineToVector(std::string t_line)
 	for (std::string token; std::getline(ISS, token, ',');)
 	{
 		std::cout << token << std::endl;
+
+		std::vector<char> writable(token.begin(), token.end());
+		tempVector.push_back(&writable[0]);
+
+		//writable.push_back('\0');
+		//tempVector.push_back(token.c_str());
 		//tempVector.push_back(token.begin, token.end);
 	}
 	return tempVector; // vectors default passed by value not ref
@@ -136,6 +151,7 @@ std::vector<char*> File::lineToVector(std::string t_line)
 //returns 0 if success, wipes vector in the process
 int File::getConcept(std::vector<std::vector<char*> >& t_vec) 
 {
+
 	return 0; // no need for ErrCheck as will do nothing if not found
 }
 //returns 0 if success, vector is unchanged
