@@ -11,14 +11,11 @@ For Team:
 
 	File class now takes file data as 
 	vector<vector<char*>> creating a
-	C++11 dynamic jagged array.
-	Still working on an efficient,
-	read in function.
+	C++11 variant of a dynamic jagged 
+	array.
 	
 to do:
 	
-	-	finish checking "File" psudo
-	-	implement "File" code
-	-	start "Concept"
+	-	See main Readme on code home page.
 
 
