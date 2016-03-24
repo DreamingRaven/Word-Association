@@ -25,6 +25,8 @@ For Team:
 		
 		Daemon : Help Tao + Ken with english in wiki
 		and help them implement C# calls to C++ backend.
+		If possible start report via google drive email,
+		invite, that i created for everyone on the 24th.
 		
 		Myself (GO) : Complete last headache FILE functions, 
 		and make sure group is organised and knows what
@@ -40,6 +42,7 @@ For Team:
 		that Jake calls.
 		
 		If you need anything please email me.
+		CCD is now availiable in resources!
 		
 		
 	I’m aware that for some members, that they may not 
