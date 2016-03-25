@@ -8,8 +8,13 @@ int main(int argc, char** argv)
 	// call files
 	/*File A(".\\A Appendix.txt"); */// , B("B"), C("C"), D("D"), E("E"), F("F"), G("G");
 	std::cout << "\npath = " << argv[0] << "\n" << std::endl;
-	File test("testInput.txt");
+	//File test("testInput.txt");
 	File G("..\\..\\..\\ProgramResources\\G Appendix\\G A-Z.txt"); // example of working relative pathing
 	//File A("..\\..\\..\\ProgramResources\\A Appendix\\A-B.txt");
+	std::vector<std::vector<std::string> > testVector;
+	G.getConcept(testVector);
+	std::string testString;
+	testVector = G.getConcept(testString);
+
 	return 0;
 }

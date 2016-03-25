@@ -20,6 +20,7 @@ protected:
 	int initFile();
 	// modulation of utility functions
 	std::vector<std::string> lineToVector(std::string t_line);
+	std::vector<std::vector<std::string> > getCueVector();
 	int sanitInp();
 	std::string addHeadSpace();
 	std::string removeHeadSpace();
@@ -33,6 +34,7 @@ public:
 
 	// the following are the main functions
 	int getConcept(std::vector<std::vector<std::string> >& t_vec);
+	std::vector<std::vector<std::string> > getConcept(std::string t_searchTerm);
 	int setConcept(std::vector<std::vector<std::string> >& t_vec);
 
 

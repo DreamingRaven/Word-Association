@@ -12,7 +12,7 @@
 #include <sstream>
 #include <string>
 
-// Constructor that is blank and used to generate initial G
+// constructor that is blank and used to generate initial G
 File::File()
 {
 	std::cout << "\nFile::File(), Succesfully called, initiating. Now." << std::endl;
@@ -20,7 +20,7 @@ File::File()
 	fileRead();
 }
 
-// Constructor that reads a file from an input char* full file path
+// constructor that reads a file from an input char* full file path
 File::File(char* t_filePath)
 {
 	std::cout << "\nFile::File(char* c), - Sucessfully called, initiating. Now." << std::endl;
@@ -152,20 +152,33 @@ std::vector<std::string> File::lineToVector(std::string t_line)
 	return tempStringVector; // vectors default passed by value not ref
 }
 
-//returns 0 if success, wipes vector in the process
+// returns 0 if success, replaces vector with search results of item vec[0][0]
 int File::getConcept(std::vector<std::vector<std::string> >& t_vec) 
 {
-	/**t_vec.clear();
-	*t_vec.push_back();
-	*t_vec.push_back();
+	/*t_vec.clear();
+	t_vec.push_back;
+	t_vec.push_back;
 	std::string test = "testing";
 	t_vec[0].push_back(test);
 	test = "105";
 	t_vec[1].push_back(test);*/
+
+	// find search target
+
+	// get vector of the search target results
+
+	// return target of search target results
+
 	return 0; // no need for ErrCheck as will do nothing if not found
 }
 
-//returns 0 if success, vector is unchanged
+// returns data on search term in alternating pattern of words and occurance
+std::vector<std::vector<std::string> > File::getConcept(std::string t_searchTerm)
+{
+	return std::vector<std::vector<std::string>>();
+}
+
+// returns 0 if success, vector is unchanged
 int File::setConcept(std::vector<std::vector<std::string> >& t_vec) {
 	try {
 		std::cout << "setConcept is A ok" << std::endl;
