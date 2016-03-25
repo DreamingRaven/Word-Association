@@ -1,37 +1,64 @@
 #include "Concept.h"
 #include "File.h"
-// you may want the following (G)
-//#include <string>
-//#include <vector>
+#include <iostream>
+#include <string>
+#include <vector>
 
-// vector<type>&name
-
-Concept::Concept(char* a1)
+// Constructor
+// string word : The source word
+// File fileObject : The created object of type File - used to retrieve data
+Concept::Concept(std::string word, File fileObject)
 {
-	int* a2 = 0;	// The Value of the #G in the source file; Amount of participants given a specific cue.
-	int* a3 = 0;	// The Value of the #P in the source file; Amount of participants that gave the specific response to the specific cue.
+	// Store the source word
+	conceptWord = word;
+
+	// Retrieve related words
+	fileObject.getConcept(concept);
 	
-	// Call File::getConcept(vector<vector<char*>*>& vec);
-	File* f;
-	//f->getConcept( vector<vector<char*>*>& vec);
-	
-	conceptWord = a1;
-	gArray = a2;
-	pArray = a3;
+	// Find the cue frequency
+	cueFrequency = getFreq(concept[0]);
+
 }
 
-void Concept::getWordData(char* word, int* fsg)
+// get cueFrequency
+// vector<string> data : a single word/frequency pair
+int Concept::getFreq(std::vector<std::string> data)
 {
-	fsg = generateFSG();
-	word = conceptWord;
+	try
+	{
+		return(std::stoi(data[1].c_str()));
+	}
+	catch (int e)
+	{
+		std::cout << "Error converting response frequency to int:" << e << std::endl;
+	}
+	return(-1);
 }
 
-int* Concept::generateFSG()
+// get FSG
+// vector<string> data: One matching word and frequency pair
+float Concept::getFSG(std::vector<std::string> data, int cueFrequency)
 {
-	int* fsg = 0;
-	// Divide each p in pArray by the corresponding g in gArray
-	// Return the results
-	return (fsg);
+	// Find the response frequency
+	int responseFrequency = Concept::getFreq(data);
+
+	// Times this word was given as a response / Times the source word was given as a cue
+	return(responseFrequency / cueFrequency);
+}
+
+// getWord
+// vector<string> data : One matching word and frequency pair
+std::string Concept::getWord(std::vector<std::string> data)
+{
+	// Return the first entry - the response word
+	return(data[0]);
+}
+
+int Concept::getWordData(int index, std::string* word, float* fsg)
+{
+	*word = Concept::getWord(concept[index]);
+	*fsg = Concept::getFSG(concept[index], cueFrequency);
+	return(0);
 }
 
 Concept::~Concept()

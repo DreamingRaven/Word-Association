@@ -5,7 +5,11 @@
 
 Persona::Persona(char* wrd)
 {
+<<<<<<< HEAD
 	File::File(wrd);
+=======
+	
+>>>>>>> origin/master
 }
 
 Persona::~Persona()

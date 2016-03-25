@@ -15,7 +15,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="Class communication diagram.svg">
+   sodipodi:docname="CCD PNG Basic.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="192.37071"
-     inkscape:cy="211.97016"
+     inkscape:zoom="0.9899495"
+     inkscape:cx="1246.3574"
+     inkscape:cy="733.80145"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -48,7 +48,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -332,7 +332,7 @@
          y="791.02081"
          x="619.05737"
          id="tspan4275"
-         sodipodi:role="line">Return: vec&lt; vec&lt;char*&gt; &gt;</tspan></text>
+         sodipodi:role="line">Return: vec&lt; vec&lt;string&gt; &gt;</tspan></text>
     <rect
        y="769.76807"
        x="-951.65594"
@@ -496,15 +496,15 @@
          id="tspan4403">word</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="1030.8518"
-       y="530.22052"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.75045013px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1031.1747"
+       y="525.85223"
        id="text4177-3-1"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan4179-9-7"
-         x="1030.8518"
-         y="530.22052">Call:Fi::getData(word)</tspan></text>
+         x="1031.1747"
+         y="525.85223">Call:Fi::getData(string)</tspan></text>
     <rect
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:3.28187704;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:13.12750775, 6.56375388;stroke-dashoffset:0;stroke-opacity:1"
        id="rect4181-1-7"
@@ -563,7 +563,7 @@
          y="597.3634"
          x="1122.9983"
          id="tspan4444"
-         sodipodi:role="line">Return: vec&lt; vec&lt;char*&gt; &gt;</tspan></text>
+         sodipodi:role="line">Return: vec&lt; vec&lt;string&gt; &gt;</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text4446"
