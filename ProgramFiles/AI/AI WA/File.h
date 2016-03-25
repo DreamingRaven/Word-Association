@@ -7,28 +7,33 @@ class File
 private:
 	// file/ directory name
 	char* m_fN = "";
-	// file data
-	std::vector< std::vector<char*> > m_fD;
+	// file data vector to allow dynamic changing
+	// and for reusability on all appendixes
+	std::vector< std::vector<std::string> > m_fD;
 
 protected:
-	// protecting file reader to keep sanitisation
+	// protecting file read/write to keep sanitisation
 	int fileRead();
 	int fileRead(const char* c);
 	int fileWrite();
-	std::vector<char*> lineToVector(std::string t_line);
+	// building appendix G
+	int initFile();
+	// modulation of utility functions
+	std::vector<std::string> lineToVector(std::string t_line);
 	int sanitInp();
+	std::string addHeadSpace();
+	std::string removeHeadSpace();
 
 public:
+	// constructors / destructors
 	File(); // default appendix G
 	File(char* fullFilePath); 
 	File(char* fileName, char appendix);
 	~File(); 
 
-	int initFile();
-
 	// the following are the main functions
-	int getConcept(std::vector<std::vector<char*> >& t_vec);
-	int setConcept(std::vector<std::vector<char*> >& t_vec);
+	int getConcept(std::vector<std::vector<std::string> >& t_vec);
+	int setConcept(std::vector<std::vector<std::string> >& t_vec);
 
 
 };

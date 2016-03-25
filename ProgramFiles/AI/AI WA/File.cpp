@@ -20,7 +20,7 @@ File::File()
 	fileRead();
 }
 
-// Constructor that reads a file from an input char* full file path 
+// Constructor that reads a file from an input char* full file path
 File::File(char* t_filePath)
 {
 	std::cout << "\nFile::File(char* c), - Sucessfully called, initiating. Now." << std::endl;
@@ -29,16 +29,19 @@ File::File(char* t_filePath)
 	fileRead();
 }
 
+// constructor that can read a file from file name and appendix letter
 File::File(char* t_file, char t_appendix)
 {
 
 }
 
+// destructor that currentley is unecessary due to vector
 File::~File()
 {
 
 }
 
+// function that can be used to read file of current name
 int File::fileRead()
 {
 	fileRead(m_fN);
@@ -46,6 +49,7 @@ int File::fileRead()
 		
 }
 
+// function that can be used to read file of set name
 int File::fileRead(const char* t_c)
 {
 	//if file name is not blank
@@ -53,6 +57,7 @@ int File::fileRead(const char* t_c)
 	{
 		std::ifstream file;
 		file.open(t_c);
+
 		if (file.fail()) // pre check to immediateley exit
 		{
 			std::cout << "\ncould not open file" << std::endl;
@@ -61,25 +66,17 @@ int File::fileRead(const char* t_c)
 		}
 		else
 		{
+			// late decleration of scoped variables
 			std::string line;
+			// declaring success of opening
 			std::cout << "\nfile opened successfully\ncontents:\n" << std::endl;
-
+			// begining assigning of content
 			for (int i = 0; std::getline(file, line) && !(file.fail()); i++)
 			{
 				m_fD.push_back(lineToVector(line));
 				//std::cout << *(m_fD[0][i]) << std::endl;
 			}
-
 			file.close();
-
-			//for (auto i = m_fD.begin(); i != m_fD.end(); ++i)
-			//{
-			//	//for (auto c = m_fD[i].begin(); c != m_fD[i].end(); ++c)
-			//	//{
-			//	//	//std::cout << *i[c] << ' ' << std::endl;
-			//	//}
-			//}
-			//return 0;
 		}		
 	}
 	else
@@ -91,6 +88,7 @@ int File::fileRead(const char* t_c)
 	return -1;
 }
 
+// function that appends or creates new entries for updates
 int File::fileWrite()
 {
 	// if file exists
@@ -130,32 +128,32 @@ int File::fileWrite()
 	return 0;
 }
 
-std::vector<char*> File::lineToVector(std::string t_line)
+// function that ..
+std::vector<std::string> File::lineToVector(std::string t_line)
 {
-	std::vector<char*> tempVector;
+	std::vector<std::string> tempStringVector;
 	std::istringstream ISS(t_line);
 	for (std::string token; std::getline(ISS, token, ',');)
 	{
 		std::cout << token << std::endl;
+		tempStringVector.push_back(token);
 
 		//std::vector<char> writable(token.begin(), token.end());
 		//tempVector.push_back(&writable[0]);
-
-		//writable.push_back('\0');
-		//tempVector.push_back(token.c_str());
-		//tempVector.push_back(token.begin, token.end);
 	}
-	return tempVector; // vectors default passed by value not ref
+
+	return tempStringVector; // vectors default passed by value not ref
 }
 
 //returns 0 if success, wipes vector in the process
-int File::getConcept(std::vector<std::vector<char*> >& t_vec) 
+int File::getConcept(std::vector<std::vector<std::string> >& t_vec) 
 {
 
 	return 0; // no need for ErrCheck as will do nothing if not found
 }
+
 //returns 0 if success, vector is unchanged
-int File::setConcept(std::vector<std::vector<char*> >& t_vec) {
+int File::setConcept(std::vector<std::vector<std::string> >& t_vec) {
 	try {
 		std::cout << "setConcept is A ok" << std::endl;
 		return 0;

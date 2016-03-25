@@ -1,5 +1,8 @@
 #include "Concept.h"
 #include "File.h"
+// you may want the following (G)
+//#include <string>
+//#include <vector>
 
 // vector<type>&name
 
