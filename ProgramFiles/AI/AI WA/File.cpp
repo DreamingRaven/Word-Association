@@ -133,22 +133,35 @@ std::vector<std::string> File::lineToVector(std::string t_line)
 {
 	std::vector<std::string> tempStringVector;
 	std::istringstream ISS(t_line);
+
 	for (std::string token; std::getline(ISS, token, ',');)
 	{
+		// if there is a space at the front
+		if (token[0] == ' ') 
+		{
+			// remove it (remove head of sequence)
+			token.erase(0, 1);
+		}
+
+		// display token
 		std::cout << token << std::endl;
+
+		// add it to vector
 		tempStringVector.push_back(token);
-
-		//std::vector<char> writable(token.begin(), token.end());
-		//tempVector.push_back(&writable[0]);
 	}
-
 	return tempStringVector; // vectors default passed by value not ref
 }
 
 //returns 0 if success, wipes vector in the process
 int File::getConcept(std::vector<std::vector<std::string> >& t_vec) 
 {
-
+	/**t_vec.clear();
+	*t_vec.push_back();
+	*t_vec.push_back();
+	std::string test = "testing";
+	t_vec[0].push_back(test);
+	test = "105";
+	t_vec[1].push_back(test);*/
 	return 0; // no need for ErrCheck as will do nothing if not found
 }
 
