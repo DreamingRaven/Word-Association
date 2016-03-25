@@ -1,5 +1,4 @@
-﻿cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
-  File.cpp
+﻿  File.cpp
 c:\users\geoge_000\documents\github\word-association\programfiles\ai\ai wa\file.cpp(163): warning C4101: 'e': unreferenced local variable
   AI WA.vcxproj -> C:\Users\geoge_000\Documents\GitHub\Word-Association\ProgramFiles\AI\Debug\AI WA.exe
   AI WA.vcxproj -> C:\Users\geoge_000\Documents\GitHub\Word-Association\ProgramFiles\AI\Debug\AI WA.pdb (Partial PDB)

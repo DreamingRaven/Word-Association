@@ -67,7 +67,7 @@ int File::fileRead(const char* t_c)
 			for (int i = 0; std::getline(file, line) && !(file.fail()); i++)
 			{
 				m_fD.push_back(lineToVector(line));
-				std::cout << *(m_fD[0][i]) << std::endl;
+				//std::cout << *(m_fD[0][i]) << std::endl;
 			}
 
 			file.close();
@@ -138,8 +138,8 @@ std::vector<char*> File::lineToVector(std::string t_line)
 	{
 		std::cout << token << std::endl;
 
-		std::vector<char> writable(token.begin(), token.end());
-		tempVector.push_back(&writable[0]);
+		//std::vector<char> writable(token.begin(), token.end());
+		//tempVector.push_back(&writable[0]);
 
 		//writable.push_back('\0');
 		//tempVector.push_back(token.c_str());
