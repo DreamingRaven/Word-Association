@@ -5,6 +5,6 @@ class Persona
 public:
 	Persona(char* wrd);
 	~Persona();
-	char* getBestWord();
+	char* getBestWord(char* wrd);
 };
 
