@@ -7,3 +7,5 @@ d:\users\mwluo\documents\visual studio 2010\Projects\GuessGame\GuessGame\obj\x86
 d:\users\mwluo\documents\visual studio 2010\Projects\GuessGame\GuessGame\obj\x86\Debug\GuessGame.FirstFrm.resources
 d:\users\mwluo\documents\visual studio 2010\Projects\GuessGame\GuessGame\obj\x86\Debug\GuessGame.SecondFrm.resources
 d:\Users\mwluo\documents\visual studio 2010\Projects\GuessGame\GuessGame\obj\x86\Debug\GuessGame.csprojResolveAssemblyReference.cache
+C:\Users\Alex\Documents\Uni\Group Project\Word-Association\ProgramFiles\UI\WAG\GuessGame\GuessGame\obj\x86\Debug\GuessGame.exe
+C:\Users\Alex\Documents\Uni\Group Project\Word-Association\ProgramFiles\UI\WAG\GuessGame\GuessGame\obj\x86\Debug\GuessGame.pdb
