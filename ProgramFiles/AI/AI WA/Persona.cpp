@@ -5,11 +5,7 @@
 
 Persona::Persona(char* wrd)
 {
-<<<<<<< HEAD
-	File::File(wrd);
-=======
-	
->>>>>>> origin/master
+	//File::File(wrd);
 }
 
 Persona::~Persona()
@@ -19,6 +15,6 @@ Persona::~Persona()
 
 char* Persona::getBestWord(char* wrd)
 {
-	Concept::Concept(wrd);
+	//Concept::Concept(wrd);
 	return bestWrd;
 }

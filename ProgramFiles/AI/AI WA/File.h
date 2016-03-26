@@ -16,11 +16,11 @@ protected:
 	int fileRead();
 	int fileRead(const char* c);
 	int fileWrite();
-	// building appendix G
+	// temporary building appendix G should be in diff class
 	int initFile();
 	// modulation of utility functions
 	std::vector<std::string> lineToVector(std::string t_line);
-	std::vector<std::vector<std::string> > getCueVector();
+	int fillConceptData(std::vector<std::vector<std::string> > &t_conceptVector, std::string t_cue);
 	int sanitInp();
 	std::string addHeadSpace();
 	std::string removeHeadSpace();

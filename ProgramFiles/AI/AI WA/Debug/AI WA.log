@@ -1,6 +1,9 @@
-﻿  Persona.cpp
-  Concept.cpp
-c:\users\geoge_000\documents\github\word-association\programfiles\ai\ai wa\concept.cpp(46): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+﻿  main.cpp
+  File.cpp
+c:\users\geoge_000\documents\github\word-association\programfiles\ai\ai wa\file.cpp(202): warning C4101: 'e': unreferenced local variable
   Generating Code...
+  Skipping... (no relevant changes detected)
+  Persona.cpp
+  Concept.cpp
   AI WA.vcxproj -> C:\Users\geoge_000\Documents\GitHub\Word-Association\ProgramFiles\AI\Debug\AI WA.exe
   AI WA.vcxproj -> C:\Users\geoge_000\Documents\GitHub\Word-Association\ProgramFiles\AI\Debug\AI WA.pdb (Partial PDB)

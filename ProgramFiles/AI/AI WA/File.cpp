@@ -77,6 +77,10 @@ int File::fileRead(const char* t_c)
 				//std::cout << *(m_fD[0][i]) << std::endl;
 			}
 			file.close();
+			//std::cout << m_fD[0][0] << std::endl;
+			//std::cout << m_fD[1][0] << std::endl;
+			//std::cout << m_fD[0][1] << std::endl;
+			//std::cout << m_fD[1][1] << std::endl;
 		}		
 	}
 	else
@@ -128,7 +132,7 @@ int File::fileWrite()
 	return 0;
 }
 
-// function that ..
+// function that takes a comma seperated line and converts to vector
 std::vector<std::string> File::lineToVector(std::string t_line)
 {
 	std::vector<std::string> tempStringVector;
@@ -152,17 +156,16 @@ std::vector<std::string> File::lineToVector(std::string t_line)
 	return tempStringVector; // vectors default passed by value not ref
 }
 
+// function that gets the whole vector and target and formats into concept
+int File::fillConceptData(std::vector<std::vector<std::string> >& t_conceptVector, std::string t_cue)
+{
+	return 0;
+}
+
 // returns 0 if success, replaces vector with search results of item vec[0][0]
 int File::getConcept(std::vector<std::vector<std::string> >& t_vec) 
 {
-	/*t_vec.clear();
-	t_vec.push_back;
-	t_vec.push_back;
-	std::string test = "testing";
-	t_vec[0].push_back(test);
-	test = "105";
-	t_vec[1].push_back(test);*/
-
+	
 	// find search target
 
 	// get vector of the search target results
@@ -172,10 +175,22 @@ int File::getConcept(std::vector<std::vector<std::string> >& t_vec)
 	return 0; // no need for ErrCheck as will do nothing if not found
 }
 
-// returns data on search term in alternating pattern of words and occurance
+// returns data on search term, vector[0] = words, vector[1] = occurance
 std::vector<std::vector<std::string> > File::getConcept(std::string t_searchTerm)
 {
-	return std::vector<std::vector<std::string>>();
+	// creating temporary vector
+	std::vector<std::vector<std::string> > conceptVector;
+
+	// appending concept vector with neccessary data
+	fillConceptData(conceptVector, t_searchTerm);
+
+	//// quick test
+	//std::vector<std::string> bob;
+	//std::cout << conceptVector.push_back(bob) << std::endl;
+	//// result is error and void!
+
+	// returning non referance vector, as it will go out of scope otherwise.
+	return conceptVector;
 }
 
 // returns 0 if success, vector is unchanged
