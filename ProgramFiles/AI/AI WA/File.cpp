@@ -17,7 +17,7 @@ File::File()
 {
 	std::cout << "\nFile::File(), Succesfully called, initiating. Now." << std::endl;
 	m_fN = "testInput.txt";
-	fileRead();
+	fileRead("..\\..\\..\\ProgramResources\\G Appendix\\G A-Z.txt");
 }
 
 // constructor that reads a file from an input char* full file path
@@ -29,11 +29,10 @@ File::File(char* t_filePath)
 	fileRead();
 }
 
-// constructor that can read a file from file name and appendix letter
-File::File(char* t_file, char t_appendix)
-{
-
-}
+//// constructor that can read a file from file name and appendix letter
+//File::File(char* t_file, char t_appendix)
+//{
+//}
 
 // destructor that currentley is unecessary due to vector
 File::~File()
@@ -69,7 +68,7 @@ int File::fileRead(const char* t_c)
 			// late decleration of scoped variables
 			std::string line;
 			// declaring success of opening
-			std::cout << "\nfile opened successfully\ncontents:\n" << std::endl;
+			std::cout << "\nfile opened successfully" << std::endl;
 			// begining assigning of content
 			for (int i = 0; std::getline(file, line) && !(file.fail()); i++)
 			{
@@ -77,7 +76,7 @@ int File::fileRead(const char* t_c)
 				//std::cout << *(m_fD[0][i]) << std::endl;
 			}
 			file.close();
-			//std::cout << m_fD[0][0] << std::endl;
+			//std::cout << "\n" << m_fD[0][0] << std::endl;
 			//std::cout << m_fD[1][0] << std::endl;
 			//std::cout << m_fD[0][1] << std::endl;
 			//std::cout << m_fD[1][1] << std::endl;
@@ -148,7 +147,7 @@ std::vector<std::string> File::lineToVector(std::string t_line)
 		}
 
 		// display token
-		std::cout << token << std::endl;
+			//std::cout << token << std::endl;
 
 		// add it to vector
 		tempStringVector.push_back(token);
@@ -159,20 +158,100 @@ std::vector<std::string> File::lineToVector(std::string t_line)
 // function that gets the whole vector and target and formats into concept
 int File::fillConceptData(std::vector<std::vector<std::string> >& t_conceptVector, std::string t_cue)
 {
-	return 0;
+	// cleaning up vector to prevent possible errors and inserting term at head
+	t_conceptVector.clear();
+	std::cout << "\nSearching for : \"" << t_cue << "\"" << std::endl;
+
+	// checking if better G appendix is being used or legacy data
+	if (m_fD[0][0] == "<HTML>")
+	{
+		// making it clear for debugging
+		std::cout << "\nlegacy data detected\nnow using legacy mode\nsorry this is not currentley supported" << std::endl;
+		return -1;
+	}
+	else
+	{
+		// making it clear for debugging
+		std::cout << "\nnon legacy data assumed" << std::endl;
+		int line = searchVector(t_cue); // returns -1 if not found
+
+		// checking if cue exists in data
+		if (line == -1)
+		{
+			// flagging -1
+			std::cout << "could not find referance" << std::endl;
+			return -1;
+		}
+		else
+		{
+			std::cout << "referance data :" << std::endl;
+			for (int row = 0; row<2; row++)
+			{
+				std::vector<std::string> tempString;
+				std::cout << "\nrow: " << row << std::endl;
+
+				// individual row size because data can have anomalies
+				for (int col = 0; col < m_fD[row].size(); col++)
+				{
+					std::cout << "\tcol: "<< col << ", \"" << m_fD[row][col] << "\"" << std::endl;
+					tempString.push_back(m_fD[row][col]);
+				}
+				t_conceptVector.push_back(tempString);
+			}
+			//std::vector<std::string> tempString;
+			//tempString.push_back(t_cue);
+			//t_conceptVector.push_back(tempString);
+			return 0;
+		}
+	}
+	// unreachable flag just in case
+	return -1;
+}
+
+// returns the first line that contains cue data
+int File::searchVector(const std::string& t_cue)
+{
+	// skipping every other line as numbers are in between
+	for (int line = 0; line+1 < m_fD.size(); line += 2)
+	{
+		// checking if cue is reached
+		if (m_fD[line][0] == t_cue)
+		{
+			// debugging
+			std::cout << "found referance on line :  " << line << std::endl;
+			// return referance line
+			return line;
+		}
+	}
+	// if not found flag -1
+	return -1;
 }
 
 // returns 0 if success, replaces vector with search results of item vec[0][0]
 int File::getConcept(std::vector<std::vector<std::string> >& t_vec) 
 {
-	
-	// find search target
-
-	// get vector of the search target results
-
-	// return target of search target results
-
-	return 0; // no need for ErrCheck as will do nothing if not found
+	//// cannot pass an empty sequence
+	//if (t_vec.size() > 0)
+	//{
+	//	// seperate if statement to prevent out of scope errors
+	//	// while checking if a searchable element exists
+	//	if (t_vec[0][0] != "")
+	//	{
+	//		fillConceptData(t_vec, t_vec[0][0]);
+	//		return 0;
+	//	}
+	//	else
+	//	{
+	//		std::cout << "sorry but the vector you passed does not have a [0][0] element that is valid"
+	//			<< "\nplease insert something to search for in position [0][0] or call getConcept(std::string)"
+	//			<< std::endl;
+	//		return -1;
+	//	}
+	//}
+	//std::cout << "sorry but the vector you passed does not have a [0][0] element that is valid"
+	//	<< "\nplease insert something to search for in position [0][0] or call getConcept(std::string)"
+	//	<< std::endl;
+	return 0;
 }
 
 // returns data on search term, vector[0] = words, vector[1] = occurance
@@ -183,11 +262,6 @@ std::vector<std::vector<std::string> > File::getConcept(std::string t_searchTerm
 
 	// appending concept vector with neccessary data
 	fillConceptData(conceptVector, t_searchTerm);
-
-	//// quick test
-	//std::vector<std::string> bob;
-	//std::cout << conceptVector.push_back(bob) << std::endl;
-	//// result is error and void!
 
 	// returning non referance vector, as it will go out of scope otherwise.
 	return conceptVector;

@@ -21,6 +21,7 @@ protected:
 	// modulation of utility functions
 	std::vector<std::string> lineToVector(std::string t_line);
 	int fillConceptData(std::vector<std::vector<std::string> > &t_conceptVector, std::string t_cue);
+	int searchVector(const std::string& t_cue);
 	int sanitInp();
 	std::string addHeadSpace();
 	std::string removeHeadSpace();
@@ -29,7 +30,7 @@ public:
 	// constructors / destructors
 	File(); // default appendix G
 	File(char* fullFilePath); 
-	File(char* fileName, char appendix);
+		//File(char* fileName, char appendix);
 	~File(); 
 
 	// the following are the main functions
