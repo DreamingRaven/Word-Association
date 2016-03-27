@@ -23,8 +23,14 @@ File::File()
 // constructor that reads a file from an input char* full file path
 File::File(char* t_filePath)
 {
+	// declaring for debugging
 	std::cout << "\nFile::File(char* c), - Sucessfully called, initiating. Now." << std::endl;
 	std::cout << "c = " << t_filePath << " - Non-sanitized." << std::endl;
+
+	// quick & temp, initialisation call 
+		//initFile();
+
+	// preparing file
 	m_fN = t_filePath;
 	fileRead();
 }
@@ -76,10 +82,6 @@ int File::fileRead(const char* t_c)
 				//std::cout << *(m_fD[0][i]) << std::endl;
 			}
 			file.close();
-			//std::cout << "\n" << m_fD[0][0] << std::endl;
-			//std::cout << m_fD[1][0] << std::endl;
-			//std::cout << m_fD[0][1] << std::endl;
-			//std::cout << m_fD[1][1] << std::endl;
 		}		
 	}
 	else
@@ -128,6 +130,35 @@ int File::fileWrite()
 	//myFile.close();
 	//delete[] fileData;
 	//return 0;
+	return 0;
+}
+
+// private function to initiate G appendix data from A
+int File::initFile()
+{
+	// going through all known files getting relevant data
+
+	// setting array with file paths I dont want to put it here,
+	// but for the sake of not making things any more convoluted
+	// I know its horrible to do it like this but its temporary.
+	char* relativeFile[] = {
+		"..\\..\\..\\ProgramResources\\G Appendix\\G A - Z.txt",	// first is destination
+		"..\\..\\..\\ProgramResources\\A Appendix\\A - B.txt",		// A-B
+		"..\\..\\..\\ProgramResources\\A Appendix\\C.txt",			// C
+		"..\\..\\..\\ProgramResources\\A Appendix\\D - F.txt",		// D-F
+		"..\\..\\..\\ProgramResources\\A Appendix\\G - K.txt",		// G-K
+		"..\\..\\..\\ProgramResources\\A Appendix\\L - O.txt",		// L-O
+		"..\\..\\..\\ProgramResources\\A Appendix\\P - R.txt",		// P-R
+		"..\\..\\..\\ProgramResources\\A Appendix\\S.txt",			// S
+		"..\\..\\..\\ProgramResources\\A Appendix\\T - Z.txt"		// T-Z
+	};
+
+
+	// for loop that cycles through relativeFile[] by calculating size
+	for (int i = 0; i < sizeof(relativeFile)/sizeof(relativeFile[0]);i++)
+	{
+
+	}
 	return 0;
 }
 
