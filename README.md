@@ -28,9 +28,7 @@ For Team:
 		If possible start report via google drive email,
 		invite, that i created for everyone on the 24th.
 		
-		Myself (GO) : Complete last headache FILE functions, 
-		and make sure group is organised and knows what
-		is going on + adding more to wiki pages on design.
+		Myself (GO) : Done. Now just G and help group!
 		
 		Alex : Either submit work done privateley or,
 		do work publicly on persona class. and inform
