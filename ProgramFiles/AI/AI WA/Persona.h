@@ -1,10 +1,14 @@
 #pragma once
 class Persona
 {
-	char* bestWrd;
+private:
+	std::string bestWord;
+	std::string conceptWords[9];
+	File fileObject;
+	float conceptLikely[9];
 public:
-	Persona(char* wrd);
+	Persona();
 	~Persona();
-	char* getBestWord(char* wrd);
+	std::string getBestWord(std::string word);
 };
 

@@ -1,11 +1,14 @@
 #include "Persona.h"
 #include "Concept.h"
 #include "File.h"
+#include <iostream>
+#include <string>
+#include <vector>
 
 
-Persona::Persona(char* wrd)
+Persona::Persona()
 {
-	//File::File(wrd);
+	//Constructor
 }
 
 Persona::~Persona()
@@ -13,8 +16,14 @@ Persona::~Persona()
 	//Deconstructor
 }
 
-char* Persona::getBestWord(char* wrd)
+std::string Persona::getBestWord(std::string word)
 {
-	//Concept::Concept(wrd);
-	return bestWrd;
+	Concept coChoice(word, fileObject);
+	int temp;
+	for (int index = 0; index <= 10; index++)
+	{
+		temp = coChoice.getWordData(index, &conceptWords[index], &conceptLikely[index]);
+	}
+	bestWord = conceptWords[0];
+	return bestWord;
 }
