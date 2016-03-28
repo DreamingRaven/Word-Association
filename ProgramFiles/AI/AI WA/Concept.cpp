@@ -18,7 +18,15 @@ Concept::Concept(std::string word, File fileObject)
 	// item concept[0][0] should be 
 	// an std::string that you want it
 	// to search for
-	
+	// so you can
+	//	std::vector<std::String> subVec;
+	//	subVec.push_back(word);
+	//	concept.push_back(subVec);
+	//	fileObject.getConcept(concept)
+	// or you can call directly
+	//	concept = fileObject.getConcept(word);
+	//	From G
+
 	// Find the cue frequency
 	cueFrequency = getFreq(concept[0]);
 
