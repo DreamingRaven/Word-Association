@@ -12,20 +12,24 @@
 #include <sstream>
 #include <string>
 
-// constructor that is blank and used to generate initial G
+// default constructor for G appendix
 File::File()
 {
-	std::cout << "\nFile::File(), Succesfully called, initiating. Now." << std::endl;
-	m_fN = "testInput.txt";
-	fileRead("..\\..\\..\\ProgramResources\\G Appendix\\G A-Z.txt");
+	std::cout 
+		<< "\nFile::File(), Succesfully called, initiating. Now." 
+		<< std::endl;
+	m_fN = "..\\..\\..\\ProgramResources\\G Appendix\\G A-Z.txt";
+	fileRead();
 }
 
-// constructor that reads a file from an input char* full file path
+// char* constructor for any pathed file
 File::File(char* t_filePath)
 {
 	// declaring for debugging
-	std::cout << "\nFile::File(char* c), - Sucessfully called, initiating. Now." << std::endl;
-	std::cout << "c = " << t_filePath << " - Non-sanitized." << std::endl;
+	std::cout 
+		<< "\nFile::File(char* c), - Sucessfully called, initiating. Now." 
+		<< std::endl;
+	std::cout << "c = " << t_filePath << " - Non-sanitized.\n" << std::endl;
 
 	// quick & temp, initialisation call 
 		//initFile();
@@ -73,8 +77,13 @@ int File::fileRead(const char* t_c)
 		{
 			// late decleration of scoped variables
 			std::string line;
+
+			// clear m_fD just in case
+			m_fD.clear();
+
 			// declaring success of opening
-			std::cout << "\nfile opened successfully" << std::endl;
+			std::cout << "file opened successfully\n" << std::endl;
+
 			// begining assigning of content
 			for (int i = 0; std::getline(file, line) && !(file.fail()); i++)
 			{
@@ -89,17 +98,24 @@ int File::fileRead(const char* t_c)
 		//return failed result
 		return -1;
 	}
-	// just in case return
+	// just in case return failed result
 	return -1;
 }
 
-// function that appends or creates new entries for updates
+// function that writes current data
 int File::fileWrite()
 {
+	fileWrite(m_fN, m_fD);
+	return 0;
+}
+
+// function that writes specified data
+int File::fileWrite(char* t_n, std::vector<std::vector<std::string> >& t_d)
+{
 	// if file exists
-		// overwrite
+	// overwrite
 	// else
-		// create new file
+	// create new file
 
 	// old code!
 	//int dataSize = (m_w * m_h);
@@ -133,32 +149,67 @@ int File::fileWrite()
 	return 0;
 }
 
-// private function to initiate G appendix data from A
+// protected function to initiate G appendix data from A
 int File::initFile()
 {
 	// going through all known files getting relevant data
+
+	// this could have been multithreaded
 
 	// setting array with file paths I dont want to put it here,
 	// but for the sake of not making things any more convoluted
 	// I know its horrible to do it like this but its temporary.
 	char* relativeFile[] = {
-		"..\\..\\..\\ProgramResources\\G Appendix\\G A - Z.txt",	// first is destination
-		"..\\..\\..\\ProgramResources\\A Appendix\\A - B.txt",		// A-B
+		"..\\..\\..\\ProgramResources\\G Appendix\\G A-Z.txt",	// first is destination
+		"..\\..\\..\\ProgramResources\\A Appendix\\A-B.txt",		// A-B
 		"..\\..\\..\\ProgramResources\\A Appendix\\C.txt",			// C
-		"..\\..\\..\\ProgramResources\\A Appendix\\D - F.txt",		// D-F
-		"..\\..\\..\\ProgramResources\\A Appendix\\G - K.txt",		// G-K
-		"..\\..\\..\\ProgramResources\\A Appendix\\L - O.txt",		// L-O
-		"..\\..\\..\\ProgramResources\\A Appendix\\P - R.txt",		// P-R
+		"..\\..\\..\\ProgramResources\\A Appendix\\D-F.txt",		// D-F
+		"..\\..\\..\\ProgramResources\\A Appendix\\G-K.txt",		// G-K
+		"..\\..\\..\\ProgramResources\\A Appendix\\L-O.txt",		// L-O
+		"..\\..\\..\\ProgramResources\\A Appendix\\P-R.txt",		// P-R
 		"..\\..\\..\\ProgramResources\\A Appendix\\S.txt",			// S
-		"..\\..\\..\\ProgramResources\\A Appendix\\T - Z.txt"		// T-Z
+		"..\\..\\..\\ProgramResources\\A Appendix\\T-Z.txt"			// T-Z
 	};
 
+	// creating temporary list
+	std::vector<std::vector<std::string> > list;
 
 	// for loop that cycles through relativeFile[] by calculating size
-	for (int i = 0; i < sizeof(relativeFile)/sizeof(relativeFile[0]);i++)
+	for (int i = 1; i < sizeof(relativeFile)/sizeof(relativeFile[0]); i++)
 	{
+		// for each file path:
+		std::cout << "init, " << relativeFile[i] << ", now." << std::endl;
 
+		// set file name to 
+		m_fN = relativeFile[i];
+
+		// read file
+		fileRead();
+
+		// for each cue:
+		for (int c = 0; c < m_fD.size(); c++)
+		{
+			std::cout << (m_fD[c][0])[0] << std::endl;
+			//if((m_fD[c][0])[0] != '<')
+			// creating intermediate list
+			std::vector<std::string> wordList;
+			std::vector<std::string> numberList;
+
+			// for each entry:
+
+			// add data to list
+
+		}
 	}
+
+	// m_fN = destination
+	m_fN = relativeFile[0];
+
+	// m_fD = list
+
+	// file write
+	fileWrite();
+
 	return 0;
 }
 
@@ -186,7 +237,7 @@ std::vector<std::string> File::lineToVector(std::string t_line)
 	return tempStringVector; // vectors default passed by value not ref
 }
 
-// function that gets the whole vector and target and formats into concept
+// function that gets the whole vector + target and formats into a concept vector
 int File::fillConceptData(std::vector<std::vector<std::string> >& t_conceptVector, std::string t_cue)
 {
 	// cleaning up vector to prevent possible errors and inserting term at head
@@ -218,20 +269,22 @@ int File::fillConceptData(std::vector<std::vector<std::string> >& t_conceptVecto
 			std::cout << "referance data :" << std::endl;
 			for (int row = 0; row<2; row++)
 			{
+				// declaring
 				std::vector<std::string> tempString;
 				std::cout << "\nrow: " << row << std::endl;
 
 				// individual row size because data can have anomalies
 				for (int col = 0; col < m_fD[row].size(); col++)
 				{
+					// takes the current [row][collumn] and displays it
 					std::cout << "\tcol: "<< col << ", \"" << m_fD[row][col] << "\"" << std::endl;
+
+					// takes the current [row][collumn] and assigns it to the end of an intermediate vector
 					tempString.push_back(m_fD[row][col]);
 				}
+				// takes intermediate vector and adds it to the end of the concept vector
 				t_conceptVector.push_back(tempString);
 			}
-			//std::vector<std::string> tempString;
-			//tempString.push_back(t_cue);
-			//t_conceptVector.push_back(tempString);
 			return 0;
 		}
 	}
