@@ -1,6 +1,7 @@
 // main.cpp : Word Associaion
 #include <iostream>
 #include "file.h"
+#include "concept.h"
 
 int main(int argc, char** argv) 
 {
@@ -17,6 +18,7 @@ int main(int argc, char** argv)
 			testMultiDimensionVector = G.getConcept(testString);
 			std::cout << "and the return vector of example says [0][0] = " 
 				<< testMultiDimensionVector[0][0] << std::endl;
-
+			// testing Concept class <---------
+				Concept J(testString, G);
 	return 0;
 }

@@ -14,9 +14,10 @@ Concept::Concept(std::string word, File fileObject)
 
 	// Retrieve related words
 	concept = fileObject.getConcept(word);
+	// std::cout << concept[0][0] << std::endl; checking my output is correct G
 
 	// Find the cue frequency
-	cueFrequency = getFreq(concept[0]);
+	cueFrequency = getFreq(concept[0]); // Hey Jake this is the line that causes the problems! G
 
 }
 
