@@ -13,19 +13,7 @@ Concept::Concept(std::string word, File fileObject)
 	conceptWord = word;
 
 	// Retrieve related words
-	fileObject.getConcept(concept); 
-	// *** hey just a quick note ***
-	// item concept[0][0] should be 
-	// an std::string that you want it
-	// to search for
-	// so you can
-	//	std::vector<std::String> subVec;
-	//	subVec.push_back(word);
-	//	concept.push_back(subVec);
-	//	fileObject.getConcept(concept)
-	// or you can call directly
-	//	concept = fileObject.getConcept(word);
-	//	From G
+	concept = fileObject.getConcept(word);
 
 	// Find the cue frequency
 	cueFrequency = getFreq(concept[0]);
