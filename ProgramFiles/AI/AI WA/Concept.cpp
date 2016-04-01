@@ -14,10 +14,16 @@ Concept::Concept(std::string word, File fileObject)
 
 	// Retrieve related words
 	concept = fileObject.getConcept(word);
-	// std::cout << concept[0][0] << std::endl; checking my output is correct G
 
 	// Find the cue frequency
-	cueFrequency = getFreq(concept[0]); // Hey Jake this is the line that causes the problems! G
+	cueFrequency = getFreq(concept[1]); // changed this to 1
+	// as remember concept[0] = {"AARDVARK", "ANIMAL" .. etc}
+	//			   concept[1] = {"152","49" .. etc}
+	// so what you are looking for is concept[1][0] which is "152" 
+	// G
+	// its ok that solved the problem
+	// uncomment the below and see
+	 std::cout << "******** This is the working result! -> " << cueFrequency << std::endl;
 
 }
 
@@ -27,7 +33,9 @@ int Concept::getFreq(std::vector<std::string> data)
 {
 	try
 	{
-		return(std::stoi(data[1].c_str()));
+		return(std::stoi(data[0].c_str())); // I believe the problem was here, but I fixed it
+		// by fixing this functions input.
+		// G
 	}
 	catch (int e)
 	{
