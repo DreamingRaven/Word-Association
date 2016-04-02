@@ -16,7 +16,15 @@ Concept::Concept(std::string word, File fileObject)
 	concept = fileObject.getConcept(word);
 
 	// Find the cue frequency
-	cueFrequency = getFreq(concept[1]); // changed this to 1
+	if (concept.size() > 0) { // I insetred these if statements for you as 
+							  // you are directly calling an element which 
+							  // may not exist. G
+		if (concept[0].size() > 0)
+		{
+			cueFrequency = getFreq(concept[1]);
+		}
+	}
+	 // changed this to 1
 	// as remember concept[0] = {"AARDVARK", "ANIMAL" .. etc}
 	//			   concept[1] = {"152","49" .. etc}
 	// so what you are looking for is concept[1][0] which is "152" 

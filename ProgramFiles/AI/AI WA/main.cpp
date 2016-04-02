@@ -12,13 +12,12 @@ int main(int argc, char** argv)
 		File G("..\\..\\..\\ProgramResources\\G Appendix\\G A-Z.txt");
 		// creating variables to put data into
 		std::vector<std::vector<std::string> > testMultiDimensionVector;
-		std::string testString = "AARDVARK";
+		std::string testString = "NOTARRDVARK";
 		
 		// example of getting data
 			testMultiDimensionVector = G.getConcept(testString);
-			std::cout << "and the return vector of example says [0][0] = " 
-				<< testMultiDimensionVector[0][0] << std::endl;
-			// testing Concept class <---------
-				// Concept J(testString, G);
+			// testing Concept class <--------
+					Concept J(testString, G);
+			
 	return 0;
 }
