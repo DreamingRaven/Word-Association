@@ -8,10 +8,10 @@ private:
 	std::string conceptWord;
 	std::vector<std::vector<std::string>> concept;
 	int cueFrequency;
-	int getFreq(std::string data);
-protected:
-	int wordCount;
+	float getFreq(std::string data);
+	
 public:
+	int wordCount;
 	Concept(std::string word, File fileObject);
 	~Concept();
 	int Concept::getWordData(int index, std::string* word, float* fsg);

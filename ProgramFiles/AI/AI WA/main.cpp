@@ -9,8 +9,27 @@ int main(int argc, char** argv)
 	// the testing zone.
 	std::vector<std::vector<std::string> > testMultiDimensionVector;
 	std::cout << "\npath = " << argv[0] << "\n" << std::endl;
-	std::string testString = "STREETTT";
+	std::string testString = "ANIMAL";
 
+	/*
+		Concept Test
+
+	File fileObject("..\\..\\..\\ProgramResources\\G Appendix\\G A-Z.txt");
+	Concept conceptObject(testString, fileObject);
+	std::string outputString = "";
+	std::string* stringPointer = &outputString;
+	float outputFloat = 0;
+	float* floatPointer = &outputFloat;
+
+	std::cout << "wordCount = " << conceptObject.wordCount << std::endl;
+
+	for (int Count = 1; Count < conceptObject.wordCount; Count++)
+	{
+		conceptObject.getWordData(Count,stringPointer,floatPointer);
+		std::cout << *stringPointer << " = " << *floatPointer << std::endl;
+	}
+	*/
+	
 
 	// Test of calling Persona
 	//Persona A;

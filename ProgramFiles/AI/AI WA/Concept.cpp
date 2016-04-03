@@ -38,10 +38,10 @@ Concept::Concept(std::string word, File fileObject)
 
 }
 
-// get cueFrequency
+// getFreq
 // this function bundles string to int and a try/catch in case of error
 // string data : a single frequency in string format
-int Concept::getFreq(std::string data)
+float Concept::getFreq(std::string data)
 {
 	try
 	{
@@ -60,12 +60,12 @@ int Concept::getWordData(int index, std::string* word, float* fsg)
 	if (concept.size() > 0) 
 	{
 		//Write in the word
-		if (concept[0].size() > 0)
+		if (concept[0].size() >= index)
 		{
 			*word = concept[0][index];
 		}
 		//Write in the FSG
-		if (concept[1].size() > 0)
+		if (concept[1].size() >= index)
 		{
 			*fsg = Concept::getFreq(concept[1][index]) / cueFrequency;
 		}
