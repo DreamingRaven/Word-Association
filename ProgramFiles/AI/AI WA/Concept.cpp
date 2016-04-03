@@ -21,7 +21,10 @@ Concept::Concept(std::string word, File fileObject)
 							  // may not exist. G
 		if (concept[0].size() > 0)
 		{
-			cueFrequency = getFreq(concept[1]);
+			// Store the number of related words
+			wordCount = concept[0].size();
+			// Save the cue frequency
+			cueFrequency = getFreq(concept[1][0]);
 		}
 	}
 	 // changed this to 1
@@ -36,14 +39,13 @@ Concept::Concept(std::string word, File fileObject)
 }
 
 // get cueFrequency
-// vector<string> data : a single word/frequency pair
-int Concept::getFreq(std::vector<std::string> data)
+// this function bundles string to int and a try/catch in case of error
+// string data : a single frequency in string format
+int Concept::getFreq(std::string data)
 {
 	try
 	{
-		return(std::stoi(data[0].c_str())); // I believe the problem was here, but I fixed it
-		// by fixing this functions input.
-		// G
+		return(std::stoi(data.c_str())); 
 	}
 	catch (int e)
 	{
@@ -52,29 +54,25 @@ int Concept::getFreq(std::vector<std::string> data)
 	return(-1);
 }
 
-// get FSG
-// vector<string> data: One matching word and frequency pair
-float Concept::getFSG(std::vector<std::string> data, int cueFrequency)
-{
-	// Find the response frequency
-	int responseFrequency = Concept::getFreq(data);
-
-	// Times this word was given as a response / Times the source word was given as a cue
-	return(responseFrequency / cueFrequency);
-}
-
-// getWord
-// vector<string> data : One matching word and frequency pair
-std::string Concept::getWord(std::vector<std::string> data)
-{
-	// Return the first entry - the response word
-	return(data[0]);
-}
 
 int Concept::getWordData(int index, std::string* word, float* fsg)
 {
-	*word = Concept::getWord(concept[index]);
-	*fsg = Concept::getFSG(concept[index], cueFrequency);
+	if (concept.size() > 0) 
+	{
+		//Write in the word
+		if (concept[0].size() > 0)
+		{
+			*word = concept[0][index];
+		}
+		//Write in the FSG
+		if (concept[1].size() > 0)
+		{
+			*fsg = Concept::getFreq(concept[1][index]) / cueFrequency;
+		}
+	}
+	
+	
+
 	return(0);
 }
 

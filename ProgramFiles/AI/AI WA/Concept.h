@@ -8,9 +8,9 @@ private:
 	std::string conceptWord;
 	std::vector<std::vector<std::string>> concept;
 	int cueFrequency;
-	float Concept::getFSG(std::vector<std::string> data, int cueFrequency);
-	int getFreq(std::vector<std::string> data);
-	std::string Concept::getWord(std::vector<std::string> data);
+	int getFreq(std::string data);
+protected:
+	int wordCount;
 public:
 	Concept(std::string word, File fileObject);
 	~Concept();
