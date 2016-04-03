@@ -39,11 +39,6 @@ File::File(char* t_filePath)
 	fileRead();
 }
 
-//// constructor that can read a file from file name and appendix letter
-//File::File(char* t_file, char t_appendix)
-//{
-//}
-
 // destructor that currentley is unecessary due to vector
 File::~File()
 {
@@ -55,7 +50,6 @@ int File::fileRead()
 {
 	fileRead(m_fN);
 	return 0;
-		
 }
 
 // function that can be used to read file of set name
@@ -112,40 +106,6 @@ int File::fileWrite()
 // function that writes specified data
 int File::fileWrite(char* t_n, std::vector<std::vector<std::string> >& t_d)
 {
-	// if file exists
-	// overwrite
-	// else
-	// create new file
-
-	// old code!
-	//int dataSize = (m_w * m_h);
-	//unsigned char* fileData = (unsigned char*) new unsigned char[dataSize];
-
-	//std::ofstream myFile;
-	//myFile.open(m_fileName, std::ios::out | std::ios::binary | std::ios::trunc);
-
-	//// cleaned up function to gate properly (first + no unecessary "exit(1)") and not assign heap memory if file(open)/ stream is unsuccessfull 
-	//if (myFile.is_open() && myFile.good())
-	//{
-	//	for (int i = 0; i < dataSize; i++)
-	//	{
-	//		// casting to unsigned char so can be output in file 
-	//		fileData[i] = (unsigned char)m_data[i];
-	//	}
-
-	//	myFile << "P5" << std::endl;
-	//	myFile << m_w << " " << m_h << std::endl;
-	//	myFile << oV << std::endl;
-	//	myFile.write(reinterpret_cast<char *>(fileData), (dataSize)*sizeof(unsigned char));
-	//}
-	//else
-	//{
-	//	std::cout << "Unable to use file" << std::endl;
-	//}
-
-	//myFile.close();
-	//delete[] fileData;
-	//return 0;
 	return 0;
 }
 

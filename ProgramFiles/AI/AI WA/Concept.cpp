@@ -34,7 +34,7 @@ Concept::Concept(std::string word, File fileObject)
 	// G
 	// its ok that solved the problem
 	// uncomment the below and see
-	 std::cout << "******** This is the working result! -> " << cueFrequency << std::endl;
+	// std::cout << "******** This is the working result! -> " << cueFrequency << std::endl;
 
 }
 

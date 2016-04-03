@@ -1,3 +1,9 @@
 ﻿  main.cpp
-  AI WA.vcxproj -> C:\Users\Alex\Documents\Uni\Group Project\Word-Association\ProgramFiles\AI\Debug\AI WA.exe
-  AI WA.vcxproj -> C:\Users\Alex\Documents\Uni\Group Project\Word-Association\ProgramFiles\AI\Debug\AI WA.pdb (Partial PDB)
+  File.cpp
+c:\users\geoge_000\documents\github\word-association\programfiles\ai\ai wa\file.cpp(150): warning C4018: '<': signed/unsigned mismatch
+c:\users\geoge_000\documents\github\word-association\programfiles\ai\ai wa\file.cpp(237): warning C4018: '<': signed/unsigned mismatch
+c:\users\geoge_000\documents\github\word-association\programfiles\ai\ai wa\file.cpp(259): warning C4018: '<': signed/unsigned mismatch
+c:\users\geoge_000\documents\github\word-association\programfiles\ai\ai wa\file.cpp(320): warning C4101: 'e': unreferenced local variable
+  Generating Code...
+  AI WA.vcxproj -> C:\Users\geoge_000\Documents\GitHub\Word-Association\ProgramFiles\AI\Debug\AI WA.exe
+  AI WA.vcxproj -> C:\Users\geoge_000\Documents\GitHub\Word-Association\ProgramFiles\AI\Debug\AI WA.pdb (Partial PDB)
