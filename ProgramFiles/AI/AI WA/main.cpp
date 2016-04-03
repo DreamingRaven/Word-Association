@@ -23,7 +23,7 @@ int main(int argc, char** argv)
 	
 	// Concept calls (needs work in getWordData)
 	Concept J(testString, G);
-	//J.getWordData()
+	//J.getWordData();
 			
 	return 0;
 }

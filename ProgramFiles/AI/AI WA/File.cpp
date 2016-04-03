@@ -32,7 +32,8 @@ File::File(char* t_filePath)
 	std::cout << "c = " << t_filePath << " - Non-sanitized.\n" << std::endl;
 
 	// quick & temp, initialisation call 
-		//initFile();
+		// initFile(); //dont call this unless you want to rewrite everything
+		// from scratch i.e our initial database not G appendix
 
 	// preparing file
 	m_fN = t_filePath;
@@ -106,10 +107,26 @@ int File::fileWrite()
 // function that writes specified data
 int File::fileWrite(char* t_n, std::vector<std::vector<std::string> >& t_d)
 {
+	std::ofstream outputFile(t_n);
+
+	if (outputFile.is_open())
+	{
+		for (int r = 0; r < t_d.size(); r++)
+		{
+			std::string combinedData = t_d[r][0];
+
+			for (int c = 1; c < t_d[r].size(); c++)
+			{
+				combinedData = combinedData + ", " + t_d[r][c];
+			}
+			outputFile << combinedData << "\n";
+		}
+		outputFile.close();
+	}
 	return 0;
 }
 
-// protected function to initiate G appendix data from A
+// protected function to initiate G appendix data from A NEEDS BREAKING DOWN INTO SUB FUNC
 int File::initFile()
 {
 	// going through all known files getting relevant data
@@ -146,19 +163,66 @@ int File::initFile()
 		// read file
 		fileRead();
 
+		// creating intermediate containers
+		std::string lastWord = "";
+		std::vector<std::string> wordList;
+		std::vector<std::string> numberList;
+
 		// for each cue:
 		for (int c = 0; c < m_fD.size(); c++)
 		{
-			std::cout << (m_fD[c][0])[0] << std::endl;
-			//if((m_fD[c][0])[0] != '<')
-			// creating intermediate list
-			std::vector<std::string> wordList;
-			std::vector<std::string> numberList;
+			//std::cout << (m_fD[c][0])[0] << std::endl;
+			if ((m_fD[c][0])[0] != '<')
+			{
+				// if this item exists already
+				// by checking the last item
+				if (m_fD[c][0] == lastWord)
+				{
+					//std::cout << m_fD[c][1] << std::endl;
+					wordList.push_back(m_fD[c][1]);
+					numberList.push_back(m_fD[c][4]);
+				}
+				else // only happens if a different word so start of a new sequence
+				{
+					// check to see if previous sequence is not empty
+					if (wordList.size() > 0 && numberList.size() > 0)
+					{
+						// publish last sequence now that we know its finished
+						// and checking to get rid of CUE line
+						if (wordList[0] != "CUE")
+						{
+							list.push_back(wordList);
+							list.push_back(numberList);
+						}
 
-			// for each entry:
+						// clear last sequence
+						wordList.clear();
+						numberList.clear();
+					}
 
-			// add data to list
+					// start new sequence
+					lastWord = m_fD[c][0];
+					std::cout << lastWord << std::endl;
 
+					// add current position data into new sequence
+					wordList.push_back(lastWord);
+					wordList.push_back(m_fD[c][1]);
+					numberList.push_back(m_fD[c][3]);
+					numberList.push_back(m_fD[c][4]);
+				}
+			}
+		}
+
+		// check to see if last sequence is not empty
+		if (wordList.size() > 0 && numberList.size() > 0)
+		{
+			// publish last sequence now that we know its finished
+			list.push_back(wordList);
+			list.push_back(numberList);
+
+			// clear last sequence
+			wordList.clear();
+			numberList.clear();
 		}
 	}
 
@@ -166,9 +230,10 @@ int File::initFile()
 	m_fN = relativeFile[0];
 
 	// m_fD = list
+	// not gonna do it because its inefficent since its non pointer
 
 	// file write
-	fileWrite();
+	fileWrite(m_fN, list);
 
 	return 0;
 }
@@ -227,7 +292,7 @@ int File::fillConceptData(std::vector<std::vector<std::string> >& t_conceptVecto
 		else
 		{
 			std::cout << "referance data :" << std::endl;
-			for (int row = 0; row<2; row++)
+			for (int row = line; row < (line+2); row++)
 			{
 				// declaring
 				std::vector<std::string> tempString;
@@ -262,7 +327,7 @@ int File::searchVector(const std::string& t_cue)
 		if (m_fD[line][0] == t_cue)
 		{
 			// debugging
-			std::cout << "found referance on line :  " << line << std::endl;
+			std::cout << "found referance on line :  " << line << " (from 0)" << std::endl;
 			// return referance line
 			return line;
 		}
