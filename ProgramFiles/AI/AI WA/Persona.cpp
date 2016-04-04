@@ -34,9 +34,9 @@ std::string Persona::getBestWord(std::string word)
 	Concept coChoice(word, fileObject);
 	int temp;
 	// Call Concept classes to get related words
-	for (int index = 0; index < 1; index++)
+	for (int index = 1; index < 2; index++)
 	{
-		temp = coChoice.getWordData(index, &relatedWords[index], &relatedFSG[index]);
+		temp = coChoice.getWordData(index, &relatedWords[index-1], &relatedFSG[index-1]);
 	}
 	// Call concept again to get words related to Persona
 	// Issue with how File class works?

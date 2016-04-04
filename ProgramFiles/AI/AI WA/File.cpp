@@ -1,13 +1,6 @@
 #include <iostream>
 #include "File.h"
 #include <vector>
-// vector.push_back(value)							--> adds element to the END of the vector and resizes
-// vector.at(index)									--> returns element at index (starting from typichal index of 0)
-// vector.size()									--> returns UNSIGNED INT equal to the number of elements in vector
-// vector.begin()									--> reads vector from element 0
-// vector.insert(vector.begin() + int, new value)	--> adds element BEFORE index
-// vector.clear()									--> removes all elements in vector
-// vector.empty()									--> returns bool if empty (true = empty)
 #include <fstream>
 #include <sstream>
 #include <string>
