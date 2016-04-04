@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Build started 04/04/2016 19:55:51.
      1>Project "C:\Users\Computing\Documents\GitHub\Word-Association\ProgramFiles\AI\AI WA\AI WA.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
@@ -23,3 +24,7 @@
 Build succeeded.
 
 Time Elapsed 00:00:01.39
+=======
+﻿  AI WA.vcxproj -> C:\Users\Alex\Documents\Uni\Group Project\Word-Association\ProgramFiles\AI\Debug\AI WA.exe
+  AI WA.vcxproj -> C:\Users\Alex\Documents\Uni\Group Project\Word-Association\ProgramFiles\AI\Debug\AI WA.pdb (Partial PDB)
+>>>>>>> 2cbbc7f34a21acd2a3cef942f533e4925cf53093

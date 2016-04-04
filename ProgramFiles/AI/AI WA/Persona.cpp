@@ -9,10 +9,10 @@
 #include <locale>
 
 
-Persona::Persona()
+Persona::Persona(std::string* name, std::string* age, std::string* job)
 {
 	//Constructor
-	Persona::generatePersona();
+	Persona::generatePersona(name, age, job);
 }
 
 Persona::~Persona()
@@ -33,10 +33,13 @@ std::string Persona::getBestWord(std::string word)
 	// Initiate Concept class; pass File class and input word
 	Concept coChoice(word, fileObject);
 	int temp;
+	float sum = 0;
 	// Call Concept classes to get related words
-	for (int index = 1; index < 2; index++)
+	for (int index = 1; index < coChoice.wordCount; index++)
 	{
 		temp = coChoice.getWordData(index, &relatedWords[index-1], &relatedFSG[index-1]);
+		sum = sum + relatedFSG[index - 1];
+		std::cout << sum << std::endl;
 	}
 	// Call concept again to get words related to Persona
 	// Issue with how File class works?
@@ -64,7 +67,7 @@ void Persona::getOutputWord()
 	bestWord = relatedWords[0];
 }
 
-void Persona::generatePersona()
+void Persona::generatePersona(std::string* name, std::string* age, std::string* job)
 {
 	//Randomly select a Persona
 	int random = rand() % 1 + 1;
@@ -89,7 +92,7 @@ void Persona::generatePersona()
 		file.close();
 	}
 	//Store data from file in correct variables
-	personaName = personaFactors[0];
-	personaAge = personaFactors[1];
-	personaJob = personaFactors[2];
+	*name = personaFactors[0];
+	*age = personaFactors[1];
+	*job = personaFactors[2];
 }
