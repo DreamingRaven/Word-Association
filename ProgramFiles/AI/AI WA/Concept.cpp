@@ -60,12 +60,12 @@ int Concept::getWordData(int index, std::string* word, float* fsg)
 	if (concept.size() > 0) 
 	{
 		//Write in the word
-		if (concept[0].size() >= index)
+		if (0 < index && concept[0].size() >= index)
 		{
 			*word = concept[0][index];
 		}
 		//Write in the FSG
-		if (concept[1].size() >= index)
+		if (0 < index && concept[1].size() >= index)
 		{
 			*fsg = Concept::getFreq(concept[1][index]) / cueFrequency;
 		}
