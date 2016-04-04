@@ -1,6 +1,8 @@
 #pragma once
 
 #include "player.h"
+#include "Persona.h"
+#include <msclr\marshal_cppstd.h>
 
 namespace WordGame {
 
@@ -20,6 +22,7 @@ namespace WordGame {
 		playForm(player^ player)
 		{
 			InitializeComponent();
+			test = new Persona;
 			//
 			//TODO:  在此处添加构造函数代码
 			//
@@ -40,6 +43,7 @@ namespace WordGame {
 		/// </summary>
 		~playForm()
 		{
+			delete test;
 			if (components)
 			{
 				delete components;
@@ -69,6 +73,11 @@ namespace WordGame {
 		/// <summary>
 		/// 必需的设计器变量。
 		/// </summary>
+		Persona* test;
+		std::string* personaName;
+		std::string* personaAge;
+		std::string* personaJob;
+		// *persona = new Persona
 
 
 #pragma region Windows Form Designer generated code
@@ -267,6 +276,16 @@ private: System::Void inputTextBox_KeyDown(System::Object^  sender, System::Wind
 	if (e->KeyCode == Keys::Enter) {
 		System::String^ word = this->inputTextBox->Text->Trim();
 		if (word != System::String::Empty) {
+
+			// converting system::string^ to std::string  then passing to persona & return
+			std::string personaWord = msclr::interop::marshal_as<std::string>(word);
+			//std::string personaWord = "AARDVARK";
+			personaWord = test->getBestWord(personaWord);
+			
+			// converting result to system::string^ so can be output
+			System::String^ outPutWord = gcnew String(personaWord.c_str());
+
+
 			if (this->outputTextBox->Text == System::String::Empty) {
 				// Append text in the outputTextBox
 				this->outputTextBox->AppendText(word);
