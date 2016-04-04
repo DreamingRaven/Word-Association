@@ -9,8 +9,11 @@ int main(int argc, char** argv)
 	// the testing zone.
 	std::vector<std::vector<std::string> > testMultiDimensionVector;
 	std::cout << "\npath = " << argv[0] << "\n" << std::endl;
-	std::string testString = "APPLe";
-	Persona A;
+	std::string testString = "aGenT";
+	std::string testName;
+	std::string testAge;
+	std::string testJob;
+	Persona A(&testName, &testAge, &testJob);
 	std::cout << A.getBestWord(testString) << std::endl;	
 	return 0;
 }

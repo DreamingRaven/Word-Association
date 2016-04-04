@@ -6,18 +6,18 @@ class Persona
 private:
 	std::string bestWord;
 	void getOutputWord();
-	std::string relatedWords[6];
-	float relatedFSG[6];
-	std::string personaWords[6];
-	float personaFSG[6];
-	void generatePersona();
+	std::string relatedWords[30];
+	float relatedFSG[30];
+	std::string personaWords[30];
+	float personaFSG[30];
+	void generatePersona(std::string* name, std::string* age, std::string* job);
 	std::string personaUsing;
 	std::string personaFactors[2];
 	std::string personaName;
 	std::string personaAge;
 	std::string personaJob;
 public:
-	Persona();
+	Persona(std::string* name, std::string* age, std::string* job);
 	~Persona();
 	std::string getBestWord(std::string word);
 };
