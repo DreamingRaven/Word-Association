@@ -1,10 +1,37 @@
-﻿  logInForm.cpp
-  Persona.cpp
-Persona.cpp(96): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-Persona.cpp(98): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  playForm.cpp
-  WinMain.cpp
-  Generating Code...
-  Concept.obj : /DEBUG:FASTLINK is not supported when managed code is present; restarting link with /DEBUG:FULL
-  WordGame.vcxproj -> C:\Users\Alex\Documents\Uni\Group Project\Word-Association\ProgramFiles\UI\WordGame\x64\Debug\WordGame.exe
-  WordGame.vcxproj -> C:\Users\Alex\Documents\Uni\Group Project\Word-Association\ProgramFiles\UI\WordGame\x64\Debug\WordGame.pdb (Partial PDB)
+﻿Build started 06/04/2016 13:32:13.
+     1>Project "C:\Users\Computing\Documents\GitHub\Word-Association\ProgramFiles\UI\WordGame\WordGame\WordGame.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\\" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\Facades\\" /Zi /clr /nologo /W3 /WX- /Od /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Xml.dll" /errorReport:prompt /clr:nostdlib Concept.cpp File.cpp logInForm.cpp Persona.cpp player.cpp playForm.cpp WinMain.cpp
+         Concept.cpp
+     1>Concept.cpp(29): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+     1>Concept.cpp(31): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+     1>Concept.cpp(35): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+     1>Concept.cpp(60): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+         File.cpp
+     1>File.cpp(378): warning C4101: 'e': unreferenced local variable
+         logInForm.cpp
+         Persona.cpp
+     1>Persona.cpp(96): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+     1>Persona.cpp(98): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+         player.cpp
+         playForm.cpp
+         WinMain.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /Zi /clr /nologo /W3 /WX- /Od /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fp"x64\Debug\WordGame.pch" /Fa"x64\Debug\\" /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /errorReport:prompt "C:\Users\Computing\AppData\Local\Temp\.NETFramework,Version=v4.5.2.AssemblyAttributes.cpp"
+         .NETFramework,Version=v4.5.2.AssemblyAttributes.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Computing\Documents\GitHub\Word-Association\ProgramFiles\UI\WordGame\x64\Debug\WordGame.exe" /INCREMENTAL /NOLOGO /ASSEMBLYRESOURCE:x64\Debug\WordGame.logInForm.resources /ASSEMBLYRESOURCE:x64\Debug\WordGame.playForm.resources /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG:FASTLINK /PDB:"C:\Users\Computing\Documents\GitHub\Word-Association\ProgramFiles\UI\WordGame\x64\Debug\WordGame.pdb" /ASSEMBLYDEBUG /TLBID:1 /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X64 x64\Debug\Concept.obj
+         x64\Debug\File.obj
+         x64\Debug\logInForm.obj
+         x64\Debug\Persona.obj
+         x64\Debug\player.obj
+         x64\Debug\playForm.obj
+         x64\Debug\WinMain.obj
+         "x64\Debug\.NETFramework,Version=v4.5.2.AssemblyAttributes.obj"
+         Concept.obj : /DEBUG:FASTLINK is not supported when managed code is present; restarting link with /DEBUG:FULL
+         WordGame.vcxproj -> C:\Users\Computing\Documents\GitHub\Word-Association\ProgramFiles\UI\WordGame\x64\Debug\WordGame.exe
+     1>Done Building Project "C:\Users\Computing\Documents\GitHub\Word-Association\ProgramFiles\UI\WordGame\WordGame\WordGame.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:07.53
