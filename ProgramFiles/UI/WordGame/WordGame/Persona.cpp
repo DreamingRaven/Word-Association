@@ -86,6 +86,10 @@ std::string Persona::getBestWord(std::string word)
 	{
 		Persona::unknownWord();
 	}
+	relatedWords.clear();
+	relatedFSG.clear();
+	personaWords.clear();
+	personaFSG.clear();
 	return bestWord;
 }
 
@@ -98,7 +102,7 @@ void Persona::getOutputWord()
 	int size = relatedWords.size();
 	if (relatedWords.size() > 0)
 	{
-		for (int index = 1; count < random; ++index)
+		for (int index = 0; count < random; ++index)
 		{
 			count = count + relatedFSG[index];
 			if (count > random)
