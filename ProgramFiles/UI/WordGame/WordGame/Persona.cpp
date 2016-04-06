@@ -57,8 +57,8 @@ std::string Persona::getBestWord(std::string word)
 	for (int index = 1; index < personaRelations.wordCount; index++)
 	{
 		temp = personaRelations.getWordData(index, &fillerWord, &fillerFSG);
-		relatedWords.push_back(fillerWord);
-		relatedFSG.push_back(fillerFSG);
+		personaWords.push_back(fillerWord);
+		personaFSG.push_back(fillerFSG);
 	}
 	Persona::getOutputWord();
 	return bestWord;
