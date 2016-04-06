@@ -16,14 +16,15 @@ private:
 	//std::string personaWords[30];
 	std::vector<float> personaFSG;
 	//float personaFSG[30];
-	void generatePersona(std::string* name, std::string* age, std::string* job);
+	void generatePersona(std::string* name, std::string* age, std::string* job, std::string* gender);
 	std::string personaUsing;
-	std::string personaFactors[2];
+	std::string personaFactors[3];
 	std::string personaName;
 	std::string personaAge;
 	std::string personaJob;
 public:
 	Persona(std::string* name, std::string* age, std::string* job);
+	Persona::Persona(std::string* name, std::string* age, std::string* job, std::string* gender);
 	~Persona();
 	std::string getBestWord(std::string word);
 };

@@ -14,7 +14,16 @@ Persona::Persona(std::string* name, std::string* age, std::string* job)
 	//Constructor
 	// Initiate File Class
 	// File* fileObject = new File("..\\..\\..\\ProgramResources\\G Appendix\\G A-Z.txt");
-	Persona::generatePersona(name, age, job);
+	std::string gender = "empty";
+	Persona::generatePersona(name, age, job, &gender);
+}
+
+Persona::Persona(std::string* name, std::string* age, std::string* job, std::string* gender)
+{
+	//Constructor
+	// Initiate File Class
+	// File* fileObject = new File("..\\..\\..\\ProgramResources\\G Appendix\\G A-Z.txt");
+	Persona::generatePersona(name, age, job, gender);
 }
 
 Persona::~Persona()
@@ -100,7 +109,7 @@ void Persona::getOutputWord()
 	}
 }
 
-void Persona::generatePersona(std::string* name, std::string* age, std::string* job)
+void Persona::generatePersona(std::string* name, std::string* age, std::string* job, std::string* gender)
 {
 	//Randomly select a Persona
 	int random = rand() % 1 + 1;
@@ -128,6 +137,7 @@ void Persona::generatePersona(std::string* name, std::string* age, std::string* 
 	*name = personaFactors[0];
 	*age = personaFactors[1];
 	*job = personaFactors[2];
+	*gender = personaFactors[3];
 	personaJob = personaFactors[2];
 }
 

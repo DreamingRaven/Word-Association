@@ -1,3 +1,4 @@
 Bob
 39
-Builder
+builder
+Male
