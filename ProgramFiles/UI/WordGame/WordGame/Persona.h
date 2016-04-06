@@ -7,6 +7,7 @@ private:
 	File* fileObject;
 	std::string bestWord;
 	void getOutputWord();
+	void unknownWord();
 	std::vector<std::string> relatedWords;
 	//std::string relatedWords[30];
 	std::vector<float> relatedFSG;

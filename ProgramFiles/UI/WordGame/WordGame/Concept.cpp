@@ -29,16 +29,15 @@ Concept::Concept(std::string word, File fileObject)
 			wordCount = concept[0].size();
 			// Save the cue frequency
 			cueFrequency = getFreq(concept[1][0]);
+			totalAnswers = 0;
+			for (int Count = 1; Count < wordCount; Count++)
+			{
+				totalAnswers = totalAnswers + getFreq(concept[1][Count]);
+				std::cout << "tempInt = " << getFreq(concept[1][Count]) << " totalAnswers = " << totalAnswers << std::endl;
+			}
 		}
 	}
 
-	
-	totalAnswers = 0;
-	for (int Count = 1; Count < wordCount; Count++)
-	{
-		totalAnswers = totalAnswers + getFreq(concept[1][Count]);
-		std::cout << "tempInt = " << getFreq(concept[1][Count]) << " totalAnswers = " << totalAnswers << std::endl;
-	}
 
 	 // changed this to 1
 	// as remember concept[0] = {"AARDVARK", "ANIMAL" .. etc}

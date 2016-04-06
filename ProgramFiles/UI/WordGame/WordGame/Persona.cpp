@@ -26,7 +26,7 @@ std::string Persona::getBestWord(std::string word)
 {
 	// Make sure input word is in full caps
 	std::locale loc;
-	for (std::string::size_type i = 0; i < word.length(); i++)
+	for (std::string::size_type i = 0; i < word.length(); ++i)
 	{
 		word[i] = std::toupper(word[i], loc);
 	}
@@ -38,7 +38,7 @@ std::string Persona::getBestWord(std::string word)
 	float fillerFSG;
 	float sum = 0;
 	// Call Concept classes to get related words
-	for (int index = 1; index < coChoice.wordCount; index++)
+	for (int index = 1; index < coChoice.wordCount; ++index)
 	{
 		temp = coChoice.getWordData(index, &fillerWord, &fillerFSG);
 		relatedWords.push_back(fillerWord);
@@ -48,19 +48,35 @@ std::string Persona::getBestWord(std::string word)
 	// Make sure word is Uppercase to prevent errors
 	std::string jobUpper;
 	jobUpper = personaJob;
-	for (std::string::size_type i = 0; i < personaJob.length(); i++)
+	for (std::string::size_type i = 0; i < personaJob.length(); ++i)
 	{
 		jobUpper[i] = std::toupper(personaJob[i], loc);
 	}
 	// Create new concept object
 	Concept personaRelations(jobUpper, fileObject);
-	for (int index = 1; index < personaRelations.wordCount; index++)
+	for (int index = 1; index < personaRelations.wordCount; ++index)
 	{
 		temp = personaRelations.getWordData(index, &fillerWord, &fillerFSG);
 		personaWords.push_back(fillerWord);
 		personaFSG.push_back(fillerFSG);
 	}
 	Persona::getOutputWord();
+	// Make output word have the first letter capitalised and rest lower case
+	for (std::string::size_type i = 0; i < bestWord.length(); ++i)
+	{
+		if (i == 0)
+		{
+			bestWord[i] = std::toupper(bestWord[i], loc);
+		}
+		else
+		{
+			bestWord[i] = std::tolower(bestWord[i], loc);
+		}
+	}
+	if (bestWord == "")
+	{
+		Persona::unknownWord();
+	}
 	return bestWord;
 }
 
@@ -71,12 +87,15 @@ void Persona::getOutputWord()
 	float random = ((rand() % 1001) / 1000.);
 	float count = 0;
 	int size = relatedWords.size();
-	for (int index = 1; count < random; index++)
+	if (relatedWords.size() > 0)
 	{
-		count = count + relatedFSG[index];
-		if (count > random)
+		for (int index = 1; count < random; ++index)
 		{
-			bestWord = relatedWords[index];
+			count = count + relatedFSG[index];
+			if (count > random)
+			{
+				bestWord = relatedWords[index];
+			}
 		}
 	}
 }
@@ -110,4 +129,9 @@ void Persona::generatePersona(std::string* name, std::string* age, std::string* 
 	*age = personaFactors[1];
 	*job = personaFactors[2];
 	personaJob = personaFactors[2];
+}
+
+void Persona::unknownWord()
+{
+	bestWord = "what";
 }

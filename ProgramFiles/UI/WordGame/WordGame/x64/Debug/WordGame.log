@@ -1,2 +1,10 @@
-﻿  WordGame.vcxproj -> C:\Users\Alex\Documents\Uni\Group Project\Word-Association\ProgramFiles\UI\WordGame\x64\Debug\WordGame.exe
+﻿  Persona.cpp
+Persona.cpp(87): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+Persona.cpp(89): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  WinMain.cpp
+  logInForm.cpp
+  playForm.cpp
+  Generating Code...
+  Concept.obj : /DEBUG:FASTLINK is not supported when managed code is present; restarting link with /DEBUG:FULL
+  WordGame.vcxproj -> C:\Users\Alex\Documents\Uni\Group Project\Word-Association\ProgramFiles\UI\WordGame\x64\Debug\WordGame.exe
   WordGame.vcxproj -> C:\Users\Alex\Documents\Uni\Group Project\Word-Association\ProgramFiles\UI\WordGame\x64\Debug\WordGame.pdb (Partial PDB)
