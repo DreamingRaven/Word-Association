@@ -1,6 +1,31 @@
+<<<<<<< HEAD
 ﻿  Persona.cpp
 Persona.cpp(100): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 Persona.cpp(102): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   Concept.obj : /DEBUG:FASTLINK is not supported when managed code is present; restarting link with /DEBUG:FULL
   WordGame.vcxproj -> C:\Users\Alex\Documents\Uni\Group Project\Word-Association\ProgramFiles\UI\WordGame\x64\Debug\WordGame.exe
   WordGame.vcxproj -> C:\Users\Alex\Documents\Uni\Group Project\Word-Association\ProgramFiles\UI\WordGame\x64\Debug\WordGame.pdb (Partial PDB)
+=======
+﻿Build started 06/04/2016 13:46:45.
+     1>Project "C:\Users\Computing\Documents\GitHub\Word-Association\ProgramFiles\UI\WordGame\WordGame\WordGame.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\\" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\Facades\\" /Zi /clr /nologo /W3 /WX- /Od /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Xml.dll" /errorReport:prompt /clr:nostdlib File.cpp
+         File.cpp
+     1>File.cpp(381): warning C4101: 'e': unreferenced local variable
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Computing\Documents\GitHub\Word-Association\ProgramFiles\UI\WordGame\x64\Debug\WordGame.exe" /INCREMENTAL /NOLOGO /ASSEMBLYRESOURCE:x64\Debug\WordGame.logInForm.resources /ASSEMBLYRESOURCE:x64\Debug\WordGame.playForm.resources /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG:FASTLINK /PDB:"C:\Users\Computing\Documents\GitHub\Word-Association\ProgramFiles\UI\WordGame\x64\Debug\WordGame.pdb" /ASSEMBLYDEBUG /TLBID:1 /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X64 x64\Debug\Concept.obj
+         x64\Debug\File.obj
+         x64\Debug\logInForm.obj
+         x64\Debug\Persona.obj
+         x64\Debug\player.obj
+         x64\Debug\playForm.obj
+         x64\Debug\WinMain.obj
+         "x64\Debug\.NETFramework,Version=v4.5.2.AssemblyAttributes.obj"
+         Concept.obj : /DEBUG:FASTLINK is not supported when managed code is present; restarting link with /DEBUG:FULL
+         WordGame.vcxproj -> C:\Users\Computing\Documents\GitHub\Word-Association\ProgramFiles\UI\WordGame\x64\Debug\WordGame.exe
+     1>Done Building Project "C:\Users\Computing\Documents\GitHub\Word-Association\ProgramFiles\UI\WordGame\WordGame\WordGame.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.77
+>>>>>>> origin/master

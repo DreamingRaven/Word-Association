@@ -263,47 +263,50 @@ int File::fillConceptData(std::vector<std::vector<std::string> >& t_conceptVecto
 	std::cout << "\nSearching for : \"" << t_cue << "\"" << std::endl;
 
 	// checking if better G appendix is being used or legacy data
-	if (m_fD[0][0] == "<HTML>")
+	if (m_fD.size() > 0)
 	{
-		// making it clear for debugging
-		std::cout << "\nlegacy data detected\nnow using legacy mode\nsorry this is not currentley supported" << std::endl;
-		return -1;
-	}
-	else
-	{
-		// making it clear for debugging
-		std::cout << "\nnon legacy data assumed" << std::endl;
-		int line = searchVector(t_cue); // returns -1 if not found
-
-		// checking if cue exists in data
-		if (line == -1)
+		if (m_fD[0][0] == "<HTML>")
 		{
-			// flagging -1
-			std::cout << "could not find referance" << std::endl;
+			// making it clear for debugging
+			std::cout << "\nlegacy data detected\nnow using legacy mode\nsorry this is not currentley supported" << std::endl;
 			return -1;
 		}
 		else
 		{
-			std::cout << "referance data :" << std::endl;
-			for (int row = line; row < (line+2); row++)
+			// making it clear for debugging
+			std::cout << "\nnon legacy data assumed" << std::endl;
+			int line = searchVector(t_cue); // returns -1 if not found
+
+											// checking if cue exists in data
+			if (line == -1)
 			{
-				// declaring
-				std::vector<std::string> tempString;
-				std::cout << "\nrow: " << row << std::endl;
-
-				// individual row size because data can have anomalies
-				for (int col = 0; col < m_fD[row].size(); col++)
-				{
-					// takes the current [row][collumn] and displays it
-					std::cout << "\tcol: "<< col << ", \"" << m_fD[row][col] << "\"" << std::endl;
-
-					// takes the current [row][collumn] and assigns it to the end of an intermediate vector
-					tempString.push_back(m_fD[row][col]);
-				}
-				// takes intermediate vector and adds it to the end of the concept vector
-				t_conceptVector.push_back(tempString);
+				// flagging -1
+				std::cout << "could not find referance" << std::endl;
+				return -1;
 			}
-			return 0;
+			else
+			{
+				std::cout << "referance data :" << std::endl;
+				for (int row = line; row < (line + 2); row++)
+				{
+					// declaring
+					std::vector<std::string> tempString;
+					std::cout << "\nrow: " << row << std::endl;
+
+					// individual row size because data can have anomalies
+					for (int col = 0; col < m_fD[row].size(); col++)
+					{
+						// takes the current [row][collumn] and displays it
+						std::cout << "\tcol: " << col << ", \"" << m_fD[row][col] << "\"" << std::endl;
+
+						// takes the current [row][collumn] and assigns it to the end of an intermediate vector
+						tempString.push_back(m_fD[row][col]);
+					}
+					// takes intermediate vector and adds it to the end of the concept vector
+					t_conceptVector.push_back(tempString);
+				}
+				return 0;
+			}
 		}
 	}
 	// unreachable flag just in case
