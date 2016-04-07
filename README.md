@@ -14,34 +14,11 @@ For Everyone:
 
 For Team:
 	
-	Currentley: scheduled email on 24th March will state deadline
-	for individual sections so we can fix any issues.
+	List of future updates:
 	
-	Sections:
-	
-		Tao + Ken : write UI wiki pages + inform group 
-		about past weeks work on calling C++ functions
-		from C#.
-		
-		Daemon : Help Tao + Ken with english in wiki
-		and help them implement C# calls to C++ backend.
-		If possible start report via google drive email,
-		invite, that i created for everyone on the 24th.
-		
-		Myself (GO) : Done. Now just G and help group!
-		
-		Alex : Either submit work done privateley or,
-		do work publicly on persona class. and inform
-		anything that Jake needs to change in his functions,
-		that Alex calls.
-		
-		Jake : Complete concept class. And inform G.O.
-		about anything that needs changing in his functions,
-		that Jake calls.
-		
-		If you need anything please email me.
-		CCD is now availiable in resources!
-		
+	- add program fail and victory state.
+	- add program memory to not repeat itself.
+	- add program learning.
 		
 	I’m aware that for some members, that they may not 
 	be familiar with git or GitHub, Im here if you
