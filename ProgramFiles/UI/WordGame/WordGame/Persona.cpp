@@ -1,6 +1,8 @@
 #include "Persona.h"
 #include "Concept.h"
 #include "File.h"
+#include <cstdlib>
+#include <ctime>
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -97,6 +99,7 @@ std::string Persona::getBestWord(std::string word)
 void Persona::getOutputWord()
 {
 	// Will be completed after Concept update
+	std::srand(std::time(0)); // use current time as seed for random generator
 	//Compare results from input word and persona words for relation
 	float random = ((rand() % 1001) / 1000.);
 	float count = 0;
