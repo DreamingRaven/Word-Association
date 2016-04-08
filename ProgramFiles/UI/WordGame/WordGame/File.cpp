@@ -11,7 +11,7 @@ File::File()
 	std::cout 
 		<< "\nFile::File(), Succesfully called, initiating. Now." 
 		<< std::endl;
-	m_fN = "..\\..\\..\\ProgramResources\\G Appendix\\G A-Z.txt";
+	m_fN = "..\\..\\..\\..\\ProgramResources\\G Appendix\\G A - Z.txt";
 	fileRead();
 }
 

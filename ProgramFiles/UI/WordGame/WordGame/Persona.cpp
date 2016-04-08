@@ -35,6 +35,7 @@ std::string Persona::getBestWord(std::string word)
 {
 	// Make sure input word is in full caps
 	std::locale loc;
+	bestWord = "";
 	for (std::string::size_type i = 0; i < word.length(); ++i)
 	{
 		word[i] = std::toupper(word[i], loc);

@@ -25,11 +25,13 @@ namespace WordGame {
 			m_name = new std::string;
 			m_age = new std::string;
 			m_job = new std::string;
+			m_gender = new std::string;
 			//outPutWord = new System::String^;
 			*m_name = "";
 			*m_age = "";
 			*m_job = "";
-			m_persona = new Persona(m_name, m_age, m_job);
+			*m_gender = "";
+			m_persona = new Persona(m_name, m_age, m_job, m_gender);
 			//
 			//TODO:  在此处添加构造函数代码
 			//
@@ -38,7 +40,7 @@ namespace WordGame {
 			// Append the player information
 			this->playerTextBox->AppendText("Name:\t" + player->getName() + "\r\n");
 			this->playerTextBox->AppendText("Age:\t" + player->getAge() + "\r\n");
-			this->playerTextBox->AppendText("Vacation:\t" + player->getVacation() + "\r\n");
+			this->playerTextBox->AppendText("Vocation:\t" + player->getVacation() + "\r\n");
 			this->playerTextBox->AppendText("Gender:\t" + player->getGender() + "\r\n");
 			// Start the timer and the countTimer
 			this->timer->Start();

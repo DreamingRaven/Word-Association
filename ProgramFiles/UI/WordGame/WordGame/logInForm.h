@@ -93,9 +93,9 @@ namespace WordGame {
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(111, 11);
+			this->label1->Location = System::Drawing::Point(111, 12);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(200, 40);
+			this->label1->Size = System::Drawing::Size(200, 43);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Word Game";
 			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -106,9 +106,9 @@ namespace WordGame {
 			this->groupBox1->Controls->Add(this->start);
 			this->groupBox1->Font = (gcnew System::Drawing::Font(L"Cambria", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->groupBox1->Location = System::Drawing::Point(36, 54);
+			this->groupBox1->Location = System::Drawing::Point(36, 59);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(350, 312);
+			this->groupBox1->Size = System::Drawing::Size(350, 338);
 			this->groupBox1->TabIndex = 1;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Player";
@@ -126,9 +126,9 @@ namespace WordGame {
 			this->groupBox2->Controls->Add(this->label4);
 			this->groupBox2->Controls->Add(this->label3);
 			this->groupBox2->Controls->Add(this->label2);
-			this->groupBox2->Location = System::Drawing::Point(46, 29);
+			this->groupBox2->Location = System::Drawing::Point(46, 31);
 			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Size = System::Drawing::Size(277, 219);
+			this->groupBox2->Size = System::Drawing::Size(277, 237);
 			this->groupBox2->TabIndex = 10;
 			this->groupBox2->TabStop = false;
 			// 
@@ -137,7 +137,7 @@ namespace WordGame {
 			this->label6->AutoSize = true;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Consolas", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(119, 23);
+			this->label6->Location = System::Drawing::Point(119, 25);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(110, 22);
 			this->label6->TabIndex = 9;
@@ -148,7 +148,7 @@ namespace WordGame {
 			this->femaleRadioButton->AutoSize = true;
 			this->femaleRadioButton->Font = (gcnew System::Drawing::Font(L"Consolas", 10.5F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->femaleRadioButton->Location = System::Drawing::Point(189, 183);
+			this->femaleRadioButton->Location = System::Drawing::Point(189, 198);
 			this->femaleRadioButton->Name = L"femaleRadioButton";
 			this->femaleRadioButton->Size = System::Drawing::Size(74, 21);
 			this->femaleRadioButton->TabIndex = 8;
@@ -161,7 +161,7 @@ namespace WordGame {
 			this->maleRadioButton->Checked = true;
 			this->maleRadioButton->Font = (gcnew System::Drawing::Font(L"Consolas", 10.5F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->maleRadioButton->Location = System::Drawing::Point(116, 183);
+			this->maleRadioButton->Location = System::Drawing::Point(116, 198);
 			this->maleRadioButton->Name = L"maleRadioButton";
 			this->maleRadioButton->Size = System::Drawing::Size(58, 21);
 			this->maleRadioButton->TabIndex = 7;
@@ -173,7 +173,7 @@ namespace WordGame {
 			// 
 			this->vacationTextBox->Font = (gcnew System::Drawing::Font(L"Cambria", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->vacationTextBox->Location = System::Drawing::Point(116, 138);
+			this->vacationTextBox->Location = System::Drawing::Point(116, 150);
 			this->vacationTextBox->Name = L"vacationTextBox";
 			this->vacationTextBox->Size = System::Drawing::Size(142, 26);
 			this->vacationTextBox->TabIndex = 6;
@@ -182,7 +182,7 @@ namespace WordGame {
 			// 
 			this->ageTextBox->Font = (gcnew System::Drawing::Font(L"Cambria", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ageTextBox->Location = System::Drawing::Point(116, 98);
+			this->ageTextBox->Location = System::Drawing::Point(116, 106);
 			this->ageTextBox->Name = L"ageTextBox";
 			this->ageTextBox->Size = System::Drawing::Size(142, 26);
 			this->ageTextBox->TabIndex = 5;
@@ -193,7 +193,7 @@ namespace WordGame {
 			this->nameTextBox->BackColor = System::Drawing::Color::White;
 			this->nameTextBox->Font = (gcnew System::Drawing::Font(L"Cambria", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->nameTextBox->Location = System::Drawing::Point(116, 58);
+			this->nameTextBox->Location = System::Drawing::Point(116, 63);
 			this->nameTextBox->Name = L"nameTextBox";
 			this->nameTextBox->Size = System::Drawing::Size(142, 26);
 			this->nameTextBox->TabIndex = 4;
@@ -204,7 +204,7 @@ namespace WordGame {
 			this->label5->Font = (gcnew System::Drawing::Font(L"Cambria", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label5->ForeColor = System::Drawing::Color::SteelBlue;
-			this->label5->Location = System::Drawing::Point(16, 180);
+			this->label5->Location = System::Drawing::Point(16, 195);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(75, 22);
 			this->label5->TabIndex = 3;
@@ -213,14 +213,14 @@ namespace WordGame {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Î¢ÈíÑÅºÚ", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
 			this->label4->ForeColor = System::Drawing::Color::SteelBlue;
-			this->label4->Location = System::Drawing::Point(10, 138);
+			this->label4->Location = System::Drawing::Point(10, 150);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(81, 21);
+			this->label4->Size = System::Drawing::Size(76, 20);
 			this->label4->TabIndex = 2;
-			this->label4->Text = L"Vacation:";
+			this->label4->Text = L"Vocation:";
 			// 
 			// label3
 			// 
@@ -228,7 +228,7 @@ namespace WordGame {
 			this->label3->Font = (gcnew System::Drawing::Font(L"Calibri", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::Color::SteelBlue;
-			this->label3->Location = System::Drawing::Point(47, 98);
+			this->label3->Location = System::Drawing::Point(47, 106);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(44, 23);
 			this->label3->TabIndex = 1;
@@ -240,7 +240,7 @@ namespace WordGame {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Calibri", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::SteelBlue;
-			this->label2->Location = System::Drawing::Point(31, 58);
+			this->label2->Location = System::Drawing::Point(31, 63);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(60, 23);
 			this->label2->TabIndex = 0;
@@ -251,9 +251,9 @@ namespace WordGame {
 			this->start->FlatStyle = System::Windows::Forms::FlatStyle::System;
 			this->start->Font = (gcnew System::Drawing::Font(L"Consolas", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->start->Location = System::Drawing::Point(122, 263);
+			this->start->Location = System::Drawing::Point(122, 285);
 			this->start->Name = L"start";
-			this->start->Size = System::Drawing::Size(107, 38);
+			this->start->Size = System::Drawing::Size(107, 41);
 			this->start->TabIndex = 9;
 			this->start->Text = L"START";
 			this->start->UseVisualStyleBackColor = true;
@@ -261,11 +261,11 @@ namespace WordGame {
 			// 
 			// logInForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->ClientSize = System::Drawing::Size(421, 382);
+			this->ClientSize = System::Drawing::Size(421, 414);
 			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->label1);
 			this->Name = L"logInForm";
@@ -292,7 +292,7 @@ private: System::Void start_Click(System::Object^  sender, System::EventArgs^  e
 			System::Int32^ iAge = System::Convert::ToInt32(sAge);
 			System::String^ vacation = this->vacationTextBox->Text->Trim();
 			if (vacation == System::String::Empty) {
-				MessageBox::Show("The vacation textbox can't be empty!", "Input Error");
+				MessageBox::Show("The vocation textbox can't be empty!", "Input Error");
 			}
 			else {
 				System::String^ gender = this->maleRadioButton->Checked ? "Male" : "Female";

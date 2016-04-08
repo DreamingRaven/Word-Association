@@ -14,7 +14,7 @@ Concept::Concept(std::string word, File fileObject)
 
 	// Retrieve related words
 	concept = fileObject.getConcept(word);
-
+	wordCount = 0;
 	
 
 	
