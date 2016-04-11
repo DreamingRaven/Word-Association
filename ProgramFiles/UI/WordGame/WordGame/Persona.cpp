@@ -42,6 +42,7 @@ std::string Persona::getBestWord(std::string word)
 	{
 		word[i] = std::toupper(word[i], loc);
 	}
+	usedWords.push_back(word);
 	// Initiate Concept class; pass File class and input word
 	File fileObject("..\\..\\..\\..\\ProgramResources\\G Appendix\\G A-Z.txt"); // "..\\..\\..\\..\\ProgramResources\\G Appendix\\G A-Z.txt"
 	Concept coChoice(word, fileObject);
@@ -73,6 +74,7 @@ std::string Persona::getBestWord(std::string word)
 		personaFSG.push_back(fillerFSG);
 	}
 	Persona::getOutputWord();
+	usedWords.push_back(bestWord);
 	// Make output word have the first letter capitalised and rest lower case
 	for (std::string::size_type i = 0; i < bestWord.length(); ++i)
 	{
@@ -102,16 +104,31 @@ void Persona::getOutputWord()
 	std::srand(std::time(0)); // use current time as seed for random generator
 	//Compare results from input word and persona words for relation
 	float random = ((rand() % 1001) / 1000.);
-	float count = 0;
-	int size = relatedWords.size();
+	bool repeatWord = true;
 	if (relatedWords.size() > 0)
 	{
-		for (int index = 0; count < random; ++index)
+		while (repeatWord == true)
 		{
-			count = count + relatedFSG[index];
-			if (count > random)
+			if (repeatWord == true)
 			{
-				bestWord = relatedWords[index];
+				random = ((rand() % 1001) / 1000.);
+				repeatWord = false;
+				float count = 0;
+				for (int index = 0; count < random; ++index)
+				{
+					count = count + relatedFSG[index];
+					if (count > random)
+					{
+						bestWord = relatedWords[index];
+					}
+				}
+				for (int test = 0; test < usedWords.size(); ++test)
+				{
+					if (bestWord == usedWords[test])
+					{
+						repeatWord = true;
+					}
+				}
 			}
 		}
 	}

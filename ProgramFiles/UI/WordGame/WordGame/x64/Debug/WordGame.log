@@ -1,20 +1,7 @@
-﻿  Concept.cpp
-Concept.cpp(29): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-Concept.cpp(31): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-Concept.cpp(35): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-Concept.cpp(60): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
-  File.cpp
-File.cpp(381): warning C4101: 'e': unreferenced local variable
-  logInForm.cpp
-  Persona.cpp
-Persona.cpp(102): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-Persona.cpp(104): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-Persona.cpp(106): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  player.cpp
-  playForm.cpp
-  WinMain.cpp
-  Generating Code...
-  .NETFramework,Version=v4.5.2.AssemblyAttributes.cpp
+﻿  Persona.cpp
+Persona.cpp(104): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+Persona.cpp(106): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+Persona.cpp(114): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   Concept.obj : /DEBUG:FASTLINK is not supported when managed code is present; restarting link with /DEBUG:FULL
   WordGame.vcxproj -> C:\Users\Alex\Documents\Uni\Group Project\Word-Association\ProgramFiles\UI\WordGame\x64\Debug\WordGame.exe
   WordGame.vcxproj -> C:\Users\Alex\Documents\Uni\Group Project\Word-Association\ProgramFiles\UI\WordGame\x64\Debug\WordGame.pdb (Partial PDB)
