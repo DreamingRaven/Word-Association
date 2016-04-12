@@ -8,14 +8,14 @@ private:
 	std::string bestWord;
 	void getOutputWord();
 	void unknownWord();
+	// Vectors to hold words related to words input by users
 	std::vector<std::string> relatedWords;
-	//std::string relatedWords[30];
 	std::vector<float> relatedFSG;
-	//float relatedFSG[30];
+	// Vectors to hold words related to persona
 	std::vector<std::string> personaWords;
-	//std::string personaWords[30];
 	std::vector<float> personaFSG;
-	//float personaFSG[30];
+	// Vector to hold words already used by player and persona
+	std::vector<std::string> usedWords;
 	void generatePersona(std::string* name, std::string* age, std::string* job, std::string* gender);
 	std::string personaUsing;
 	std::string personaFactors[3];

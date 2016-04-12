@@ -1,2 +1,7 @@
-﻿  WordGame.vcxproj -> C:\Users\geoge_000\Documents\GitHub\Word-Association\ProgramFiles\UI\WordGame\x64\Debug\WordGame.exe
-  WordGame.vcxproj -> C:\Users\geoge_000\Documents\GitHub\Word-Association\ProgramFiles\UI\WordGame\x64\Debug\WordGame.pdb (Partial PDB)
+﻿  Persona.cpp
+Persona.cpp(104): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+Persona.cpp(106): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+Persona.cpp(114): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Concept.obj : /DEBUG:FASTLINK is not supported when managed code is present; restarting link with /DEBUG:FULL
+  WordGame.vcxproj -> C:\Users\Alex\Documents\Uni\Group Project\Word-Association\ProgramFiles\UI\WordGame\x64\Debug\WordGame.exe
+  WordGame.vcxproj -> C:\Users\Alex\Documents\Uni\Group Project\Word-Association\ProgramFiles\UI\WordGame\x64\Debug\WordGame.pdb (Partial PDB)

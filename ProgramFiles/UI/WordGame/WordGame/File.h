@@ -34,7 +34,7 @@ protected:
 public:
 	// constructors / destructors
 	File(); // default appendix G
-	File(char* fullFilePath); 
+	File(char* t_fullFilePath); 
 	~File(); 
 
 	// the following are the main functions
