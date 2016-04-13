@@ -93,11 +93,11 @@ namespace WordGame {
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(111, 12);
+			this->label1->Location = System::Drawing::Point(70, 13);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(200, 43);
+			this->label1->Size = System::Drawing::Size(275, 43);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"Word Game";
+			this->label1->Text = L"Word Association";
 			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// groupBox1
