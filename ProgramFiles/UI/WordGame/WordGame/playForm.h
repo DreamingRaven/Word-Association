@@ -37,18 +37,34 @@ namespace WordGame {
 			//
 			// Clear the playerTextBox
 			this->playerTextBox->Text = System::String::Empty;
-			// Append the player information
+
+			// Append the player information - this can all be one call doesnt need to be so many (G)
 			this->playerTextBox->AppendText("Player\r\n");
 			this->playerTextBox->AppendText("Name:\t" + player->getName() + "\r\n");
 			this->playerTextBox->AppendText("Age:\t" + player->getAge() + "\r\n");
 			this->playerTextBox->AppendText("Vocation:\t" + player->getVacation() + "\r\n");
 			this->playerTextBox->AppendText("Gender:\t" + player->getGender() + "\r\n");
 
+			
+			// unfortunate quick fix -_- (G)
 			this->textBox2->AppendText("Opponent\r\n");
-			this->textBox2->AppendText("Name:\t" + "Bob" + "\r\n");
-			this->textBox2->AppendText("Age:\t" + "39" + "\r\n");
-			this->textBox2->AppendText("Vocation:\t" + "Builder" + "\r\n");
-			this->textBox2->AppendText("Gender:\t" + "Male" + "\r\n");
+
+			std::string personaWord = *m_name;
+			outPutWord = gcnew String(personaWord.c_str());
+			this->textBox2->AppendText("Name:\t" + outPutWord + "\r\n");
+
+			personaWord = *m_age;
+			outPutWord = gcnew String(personaWord.c_str());
+			this->textBox2->AppendText("Age:\t" + outPutWord + "\r\n");
+
+			personaWord = *m_job;
+			outPutWord = gcnew String(personaWord.c_str());
+			this->textBox2->AppendText("Vocation:\t" + outPutWord + "\r\n");
+
+			personaWord = *m_gender;
+			outPutWord = gcnew String(personaWord.c_str());
+			this->textBox2->AppendText("Gender:\t" + outPutWord + "\r\n");
+
 			// Start the timer and the countTimer
 			this->timer->Start();
 			this->countTimer->Start();
