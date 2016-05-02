@@ -38,10 +38,17 @@ namespace WordGame {
 			// Clear the playerTextBox
 			this->playerTextBox->Text = System::String::Empty;
 			// Append the player information
+			this->playerTextBox->AppendText("Player\r\n");
 			this->playerTextBox->AppendText("Name:\t" + player->getName() + "\r\n");
 			this->playerTextBox->AppendText("Age:\t" + player->getAge() + "\r\n");
 			this->playerTextBox->AppendText("Vocation:\t" + player->getVacation() + "\r\n");
 			this->playerTextBox->AppendText("Gender:\t" + player->getGender() + "\r\n");
+
+			this->textBox2->AppendText("Opponent\r\n");
+			this->textBox2->AppendText("Name:\t" + "Bob" + "\r\n");
+			this->textBox2->AppendText("Age:\t" + "39" + "\r\n");
+			this->textBox2->AppendText("Vocation:\t" + "Builder" + "\r\n");
+			this->textBox2->AppendText("Gender:\t" + "Male" + "\r\n");
 			// Start the timer and the countTimer
 			this->timer->Start();
 			this->countTimer->Start();
@@ -70,7 +77,7 @@ namespace WordGame {
 
 	private: System::Windows::Forms::Label^  label5;
 	private: System::Windows::Forms::TextBox^  inputTextBox;
-	private: System::Windows::Forms::Label^  label3;
+
 
 	private: System::Windows::Forms::TextBox^  outputTextBox;
 	private: System::Windows::Forms::Label^  label6;
@@ -91,7 +98,8 @@ namespace WordGame {
 		std::string* m_age;
 		std::string* m_job;
 		std::string* m_gender;
-		System::String^ outPutWord;
+	private: System::Windows::Forms::TextBox^  textBox2;
+			 System::String^ outPutWord;
 
 
 
@@ -110,12 +118,12 @@ namespace WordGame {
 			this->countLabel = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->inputTextBox = (gcnew System::Windows::Forms::TextBox());
-			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->outputTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->playerTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->countTimer = (gcnew System::Windows::Forms::Timer(this->components));
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -127,9 +135,9 @@ namespace WordGame {
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->label1->Location = System::Drawing::Point(108, 18);
+			this->label1->Location = System::Drawing::Point(108, 20);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(250, 50);
+			this->label1->Size = System::Drawing::Size(250, 54);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Word Game";
 			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -145,11 +153,11 @@ namespace WordGame {
 			this->timeLabel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
 			this->timeLabel->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
-			this->timeLabel->Font = (gcnew System::Drawing::Font(L"Î¢ÈíÑÅºÚ", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->timeLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->timeLabel->Location = System::Drawing::Point(108, 68);
+			this->timeLabel->Location = System::Drawing::Point(108, 74);
 			this->timeLabel->Name = L"timeLabel";
-			this->timeLabel->Size = System::Drawing::Size(250, 30);
+			this->timeLabel->Size = System::Drawing::Size(250, 33);
 			this->timeLabel->TabIndex = 1;
 			this->timeLabel->Text = L"00:00:00";
 			this->timeLabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -159,11 +167,11 @@ namespace WordGame {
 			this->numLabel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
 			this->numLabel->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
-			this->numLabel->Font = (gcnew System::Drawing::Font(L"Î¢ÈíÑÅºÚ", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->numLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->numLabel->Location = System::Drawing::Point(27, 18);
+			this->numLabel->Location = System::Drawing::Point(27, 20);
 			this->numLabel->Name = L"numLabel";
-			this->numLabel->Size = System::Drawing::Size(80, 80);
+			this->numLabel->Size = System::Drawing::Size(80, 87);
 			this->numLabel->TabIndex = 2;
 			this->numLabel->Text = L"0";
 			this->numLabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -173,11 +181,11 @@ namespace WordGame {
 			this->countLabel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
 			this->countLabel->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
-			this->countLabel->Font = (gcnew System::Drawing::Font(L"Î¢ÈíÑÅºÚ", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->countLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->countLabel->Location = System::Drawing::Point(359, 18);
+			this->countLabel->Location = System::Drawing::Point(359, 20);
 			this->countLabel->Name = L"countLabel";
-			this->countLabel->Size = System::Drawing::Size(80, 80);
+			this->countLabel->Size = System::Drawing::Size(80, 87);
 			this->countLabel->TabIndex = 3;
 			this->countLabel->Text = L"0";
 			this->countLabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -187,9 +195,9 @@ namespace WordGame {
 			this->label5->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Consolas", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(27, 419);
+			this->label5->Location = System::Drawing::Point(27, 454);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(205, 25);
+			this->label5->Size = System::Drawing::Size(205, 27);
 			this->label5->TabIndex = 8;
 			this->label5->Text = L"Input Word";
 			// 
@@ -197,22 +205,11 @@ namespace WordGame {
 			// 
 			this->inputTextBox->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->inputTextBox->Location = System::Drawing::Point(27, 447);
+			this->inputTextBox->Location = System::Drawing::Point(27, 484);
 			this->inputTextBox->Name = L"inputTextBox";
 			this->inputTextBox->Size = System::Drawing::Size(205, 27);
 			this->inputTextBox->TabIndex = 9;
 			this->inputTextBox->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &playForm::inputTextBox_KeyDown);
-			// 
-			// label3
-			// 
-			this->label3->BackColor = System::Drawing::SystemColors::HighlightText;
-			this->label3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(234, 107);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(205, 100);
-			this->label3->TabIndex = 6;
 			// 
 			// outputTextBox
 			// 
@@ -221,21 +218,21 @@ namespace WordGame {
 			this->outputTextBox->Cursor = System::Windows::Forms::Cursors::IBeam;
 			this->outputTextBox->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->outputTextBox->Location = System::Drawing::Point(27, 210);
+			this->outputTextBox->Location = System::Drawing::Point(27, 228);
 			this->outputTextBox->Multiline = true;
 			this->outputTextBox->Name = L"outputTextBox";
 			this->outputTextBox->ReadOnly = true;
 			this->outputTextBox->ScrollBars = System::Windows::Forms::ScrollBars::Both;
-			this->outputTextBox->Size = System::Drawing::Size(205, 200);
+			this->outputTextBox->Size = System::Drawing::Size(205, 216);
 			this->outputTextBox->TabIndex = 10;
 			this->outputTextBox->WordWrap = false;
 			// 
 			// label6
 			// 
 			this->label6->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
-			this->label6->Location = System::Drawing::Point(234, 419);
+			this->label6->Location = System::Drawing::Point(234, 454);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(205, 55);
+			this->label6->Size = System::Drawing::Size(205, 60);
 			this->label6->TabIndex = 11;
 			// 
 			// playerTextBox
@@ -244,11 +241,11 @@ namespace WordGame {
 			this->playerTextBox->Enabled = false;
 			this->playerTextBox->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->playerTextBox->Location = System::Drawing::Point(27, 107);
+			this->playerTextBox->Location = System::Drawing::Point(27, 114);
 			this->playerTextBox->Multiline = true;
 			this->playerTextBox->Name = L"playerTextBox";
 			this->playerTextBox->ReadOnly = true;
-			this->playerTextBox->Size = System::Drawing::Size(205, 100);
+			this->playerTextBox->Size = System::Drawing::Size(205, 108);
 			this->playerTextBox->TabIndex = 12;
 			// 
 			// textBox1
@@ -256,12 +253,12 @@ namespace WordGame {
 			this->textBox1->BackColor = System::Drawing::SystemColors::ControlLightLight;
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox1->Location = System::Drawing::Point(234, 210);
+			this->textBox1->Location = System::Drawing::Point(234, 228);
 			this->textBox1->Multiline = true;
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->ReadOnly = true;
 			this->textBox1->ScrollBars = System::Windows::Forms::ScrollBars::Both;
-			this->textBox1->Size = System::Drawing::Size(205, 200);
+			this->textBox1->Size = System::Drawing::Size(205, 216);
 			this->textBox1->TabIndex = 13;
 			this->textBox1->WordWrap = false;
 			// 
@@ -271,18 +268,31 @@ namespace WordGame {
 			this->countTimer->Interval = 1000;
 			this->countTimer->Tick += gcnew System::EventHandler(this, &playForm::countTimer_Tick);
 			// 
+			// textBox2
+			// 
+			this->textBox2->BackColor = System::Drawing::SystemColors::ControlLightLight;
+			this->textBox2->Enabled = false;
+			this->textBox2->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox2->Location = System::Drawing::Point(234, 114);
+			this->textBox2->Multiline = true;
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->ReadOnly = true;
+			this->textBox2->Size = System::Drawing::Size(205, 108);
+			this->textBox2->TabIndex = 14;
+			// 
 			// playForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->ClientSize = System::Drawing::Size(467, 492);
+			this->ClientSize = System::Drawing::Size(467, 533);
+			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->playerTextBox);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->outputTextBox);
-			this->Controls->Add(this->label3);
 			this->Controls->Add(this->inputTextBox);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->countLabel);
