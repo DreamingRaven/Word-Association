@@ -17,7 +17,6 @@ For Team:
 	List of future updates:
 	
 	- add program fail and victory state.
-	- add program memory to not repeat itself.
 	- add program learning.
 		
 	I’m aware that for some members, that they may not 
@@ -26,14 +25,6 @@ For Team:
 	
 	Please also remember
 	to commit little but often.
-	
-	To Do List:
-		
-		- implement ADT of "concept"
-		- implement ADT of "file"
-		- implement ADT of "persona"
-		- implement design of UI
-		
 
 	https://github.com/ben-strasser/fast-cpp-csv-parser 
 	(CSV Reader for use in reading the word banks into the program)
